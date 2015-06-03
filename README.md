@@ -1,7 +1,7 @@
 # PowerDefense
 Projet Java de JUIN 2015
 Avec :
-* Luigi
+* Luigi (pnj)
 * Nicolas
 * Anthony
 * Antoine
