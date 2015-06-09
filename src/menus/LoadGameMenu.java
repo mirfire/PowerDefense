@@ -1,35 +1,56 @@
 package menus;
 
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
 import javax.swing.JButton;
+
+import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.Font;
+import javax.swing.SwingConstants;
+import javax.swing.JTextPane;
 
 public class LoadGameMenu extends BaseMenu {
 	private JTextField textField;
 
 	public LoadGameMenu() {
 		setLayout(null);
-		
-		textField = new JTextField();
-		textField.setBounds(89, 220, 322, 20);
-		add(textField);
-		textField.setColumns(10);
-		
-		JLabel lblNomDeLa = new JLabel("Nom de la Partie");
-		lblNomDeLa.setBounds(89, 204, 322, 14);
-		add(lblNomDeLa);
-		
+			
 		JButton btnBackToMainMenu = new JButton("Retour");
 		btnBackToMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				backToMainMenu();
 			}
 		});
-		btnBackToMainMenu.setBounds(150, 415, 200, 50);
+		btnBackToMainMenu.setBounds(150, 439, 200, 50);
 		add(btnBackToMainMenu);
-
+		
+		JPanel panelLogo = new JPanel();
+		panelLogo.setBounds(10, 30, 480, 200);
+		add(panelLogo);
+		panelLogo.setLayout(new BorderLayout(0, 0));
+		
+		ImageIcon logo = new ImageIcon("resources/logo.png");
+		JLabel lblLogo = new JLabel("", logo, JLabel.CENTER);
+		lblLogo.setSize(480, 50);
+		lblLogo.setLocation(10, 0);
+		panelLogo.add(lblLogo, BorderLayout.CENTER);
+		
+		JLabel label = new JLabel("Nom de la Partie");
+		label.setHorizontalAlignment(SwingConstants.LEFT);
+		label.setFont(new Font("Calibri", Font.PLAIN, 14));
+		label.setBounds(94, 328, 165, 20);
+		add(label);
+		
+		JTextPane textPane = new JTextPane();
+		textPane.setBounds(94, 347, 311, 20);
+		add(textPane);
+		
+		JButton button = new JButton("Lancer Partie !");
+		button.setBounds(150, 378, 200, 50);
+		add(button);
 	}
 }
