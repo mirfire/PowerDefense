@@ -8,8 +8,8 @@ public class Workstation {
 		return life;
 	}
 
-	public static void setlife(int life) {
-		life = life;
+	public static void setlife(int i) {
+		life = i;
 	}
 	public void repair(int life, int ressources){
 		return;
