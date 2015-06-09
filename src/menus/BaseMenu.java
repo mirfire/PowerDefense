@@ -22,6 +22,10 @@ public abstract class BaseMenu extends JPanel {
 		Window.LayoutManager.show(getParent(), Menus.LOADGAME.toString());
 	}
 	
+	public void showInGameMenu() {
+		Window.LayoutManager.show(getParent(), Menus.INGAME.toString());
+	}
+	
 	public void showConfirmExitGameDialog() {
 		int n = JOptionPane.showConfirmDialog((JFrame) SwingUtilities.getRoot(this), "Voulez-vous vraiment quitter ?", "", JOptionPane.YES_NO_OPTION);
 		if(n == 0)
@@ -31,5 +35,10 @@ public abstract class BaseMenu extends JPanel {
 	public void windowSetMenuMode() {
 		Window window = (Window) SwingUtilities.getWindowAncestor(getParent());
 		window.setMenuMode();
+	}
+	
+	public void windowSetGameMode() {
+		Window window = (Window) SwingUtilities.getWindowAncestor(getParent());
+		window.setGameMode();
 	}
 }

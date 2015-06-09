@@ -49,6 +49,12 @@ public class NewGameMenu extends BaseMenu {
 		add(lblNomDeLa);
 		
 		JButton btnLaunchNewGame = new JButton("Lancer Partie !");
+		btnLaunchNewGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showInGameMenu();
+				windowSetGameMode();
+			}
+		});
 		btnLaunchNewGame.setBounds(150, 378, 200, 50);
 		add(btnLaunchNewGame);
 	}
