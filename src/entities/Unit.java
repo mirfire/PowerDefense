@@ -11,7 +11,7 @@ public class Unit {
 		this.name = name;
 		this.HP = HP;
 		this.spritePath = spritePath;
-		
+		this.alive = true;
 	}
 	
 	public boolean getAlive(){
