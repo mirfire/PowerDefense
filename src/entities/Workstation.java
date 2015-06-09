@@ -14,4 +14,12 @@ public class Workstation {
 	public void repair(int life, int ressources){
 		return;
 	}
+
+	public static int getMaxHp() {
+		return maxHp;
+	}
+
+	public static void setMaxHp(int i) {
+		maxHp = i;		
+	}
 }
