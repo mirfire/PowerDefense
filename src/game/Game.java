@@ -12,4 +12,21 @@ public class Game {
 	public static void exitGame(int exitcode) {
 		System.exit(exitcode);
 	}
+	
+	public int getressources() {
+		return ressources;
+	}
+
+	public void setressources(int Ressources) {
+		this.ressources = Ressources;
+	}
+	
+	public void decrementressources(int value) {
+		this.ressources -= value;
+	}
+	public void incrementressources(int value) {
+		this.ressources += value;
+	}
+	
+	
 }

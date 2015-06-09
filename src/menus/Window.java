@@ -13,7 +13,9 @@ public class Window extends JFrame {
 
 	public Window() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 500, 500);
+		setBounds(100, 100, 515, 530);
+		this.setResizable(false);
+		
 		LayoutManager = new CardLayout(0, 0);
 		menusContainer = new JPanel();
 		mainMenu = new MainMenu();

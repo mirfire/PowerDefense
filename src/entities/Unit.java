@@ -1,5 +1,4 @@
 package entities;
-import game.Coords;
 
 public class Unit {
 	protected int HP;
@@ -11,7 +10,7 @@ public class Unit {
 		this.name = name;
 		this.HP = HP;
 		this.spritePath = spritePath;
-		this.alive = true;
+		
 	}
 	
 	public boolean getAlive(){
