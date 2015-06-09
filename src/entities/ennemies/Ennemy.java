@@ -1,4 +1,7 @@
-package entities;
+package entities.ennemies;
+
+import entities.Unit;
+import entities.Workstation;
 
 public class Ennemy extends Unit{
 	protected int dmg;
