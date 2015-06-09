@@ -19,11 +19,11 @@ public class Tower extends Unit  {
 		this.range = range;
 		this.cooldown = cooldown; 
 		this.dmgType = dmgType; 
-	
-	
+		
 }
-
-	public void detectEnnemy(){
-
+	public void killTower(int HP){
+		
+		this.HP = 0;	
+	
 }
 }
