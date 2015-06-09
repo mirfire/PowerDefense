@@ -1,6 +1,5 @@
 package entities.ennemies;
 
-import entities.Resistances;
 import game.Game;
 import entities.Unit;
 import entities.Workstation;
@@ -9,15 +8,15 @@ public class Ennemy extends Unit{
 	protected int dmg;
 	protected int walkSpeed;
 	protected int droppedRessources;
-	Resistances resistances;
+	protected Resistances resistances;
 	
 	
-	public Ennemy(String name, int HP, int dmg, int walkSpeed, int droppedRessources, String spritePath) {
+	public Ennemy(String name, int HP, int dmg, int walkSpeed, int droppedRessources,Resistances resistances, String spritePath) {
 		super(name, HP, spritePath);
 		this.dmg = dmg;
 		this.walkSpeed = walkSpeed;
 		this.droppedRessources = droppedRessources;
-		this.resistances = new Resistances();
+		this.resistances = resistances;
 	}
 	public void damageWorkstation(){
 		Workstation.setMaxHp(Workstation.getMaxHp() - dmg);
