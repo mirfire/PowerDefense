@@ -6,5 +6,5 @@ public class BlueScreen extends Ennemy {
 			int droppedRessources, String Resistances, String spritePath) {
 		super(name, HP, dmg, walkSpeed, droppedRessources, Resistances, spritePath);
 	}
-	Ennemy BlueScreen = new Ennemy("BlueScreen", 25, 10, 2, 6,"resistWeb", "");
+	Ennemy BlueScreen = new Ennemy("BlueScreen", 25, 10, 2, 6,"resistWeb", "resources/Ennemies/blueScreen.png");
 }

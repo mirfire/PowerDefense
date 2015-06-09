@@ -6,5 +6,5 @@ public class ErreurHTTP404 extends Ennemy {
 			 int droppedRessources, String Resistances, String spritePath) {
 		super(name, HP, dmg, walkSpeed, droppedRessources, Resistances, spritePath);
 		}
-	Ennemy ErreurHTTP404 = new Ennemy("ErreurHTTP404", 50, 15, 1, 4, "resistCode", "");
+	Ennemy ErreurHTTP404 = new Ennemy("ErreurHTTP404", 50, 15, 1, 4, "resistCode", "resources/Ennemies/404-page-not-found.png");
 }
