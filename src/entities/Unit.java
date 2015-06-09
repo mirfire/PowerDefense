@@ -10,7 +10,7 @@ public class Unit {
 	public Unit(String name, int HP, String spritePath) {
 		this.name = name;
 		this.HP = HP;
-		
+		this.spritePath = spritePath;
 		
 	}
 	
