@@ -23,6 +23,7 @@ public class Tower extends Unit  {
 	
 }
 
+	public void detectEnnemy(){
 
-
+}
 }
