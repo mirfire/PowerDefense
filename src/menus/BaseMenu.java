@@ -27,4 +27,9 @@ public abstract class BaseMenu extends JPanel {
 		if(n == 0)
 			Game.exitGame(0);
 	}
+	
+	public void windowSetMenuMode() {
+		Window window = (Window) SwingUtilities.getWindowAncestor(getParent());
+		window.setMenuMode();
+	}
 }
