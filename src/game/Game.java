@@ -8,4 +8,8 @@ public class Game {
 	private int survivedTime;	//a modifier
 	private int kills;
 	private boolean pause;
+	
+	public static void exitGame(int exitcode) {
+		System.exit(exitcode);
+	}
 }
