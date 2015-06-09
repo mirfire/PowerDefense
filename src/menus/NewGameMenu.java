@@ -1,6 +1,7 @@
 package menus;
 
 import java.awt.BorderLayout;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -10,8 +11,6 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
-import java.awt.Font;
-import javax.swing.DropMode;
 
 public class NewGameMenu extends BaseMenu {
 
