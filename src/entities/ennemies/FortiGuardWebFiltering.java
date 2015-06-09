@@ -6,5 +6,5 @@ public class FortiGuardWebFiltering extends Ennemy {
 			 int droppedRessources, String Resistances, String spritePath) {
 		super(name, HP, dmg, walkSpeed, droppedRessources, Resistances, spritePath);
 		}
-	Ennemy FortiGuardWebFiltering = new Ennemy("FortiGuardWebFiltering", 500, 25, 1, 50, "resistNormal","");
+	Ennemy FortiGuardWebFiltering = new Ennemy("FortiGuardWebFiltering", 500, 25, 1, 50, "resistNormal","resources/Ennemies/fortiguard.png");
 }

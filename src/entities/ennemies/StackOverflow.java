@@ -6,5 +6,5 @@ public class StackOverflow extends Ennemy{
 			 int droppedRessources, String Resistances, String spritePath) {
 		super(name, HP, dmg, walkSpeed, droppedRessources, Resistances, spritePath);
 		}
-	Ennemy StackOverflow = new Ennemy("StackOverflow", 15, 5, 1, 1, "resistNetwork", "");
+	Ennemy StackOverflow = new Ennemy("StackOverflow", 15, 5, 1, 1, "resistNetwork", "resources/Ennemies/Social-Networks-Stackoverflow-icon.png");
 }
