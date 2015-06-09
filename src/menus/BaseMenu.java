@@ -1,6 +1,7 @@
 package menus;
 
-import javax.swing.JDialog;
+import game.Game;
+
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -23,6 +24,6 @@ public abstract class BaseMenu extends JPanel {
 	
 	public void showConfirmExitGameDialog() {
 		int n = JOptionPane.showConfirmDialog((JFrame) SwingUtilities.getRoot(this), "Voulez-vous vraiment quitter ?", "", JOptionPane.YES_NO_OPTION);
-		// TODO: exitGame();
+		Game.exitGame(0);
 	}
 }
