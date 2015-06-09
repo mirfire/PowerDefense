@@ -1,29 +1,28 @@
 package menus;
 
-import javax.swing.JPanel;
-import javax.swing.JTextPane;
-import javax.swing.JButton;
-import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
-public class NewGameMenu extends JPanel {
+import javax.swing.JButton;
+import javax.swing.JTextPane;
+
+public class NewGameMenu extends BaseMenu {
 
 	public NewGameMenu() {
 		setLayout(null);
 		
-		JTextPane txtpnBite = new JTextPane();
-		txtpnBite.setText("BITE");
-		txtpnBite.setBounds(144, 146, 143, 20);
-		add(txtpnBite);
+		JTextPane txtNewGameName = new JTextPane();
+		txtNewGameName.setBounds(144, 146, 143, 20);
+		add(txtNewGameName);
 		
-		JButton btnRetour = new JButton("Retour");
-		btnRetour.addActionListener(new ActionListener() {
+		JButton btnBackToMainMenu = new JButton("Retour");
+		btnBackToMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				Window.LayoutManager.show(getParent(), Menus.MAIN.toString());
+				backToMainMenu();
 			}
 		});
-		btnRetour.setBounds(156, 312, 89, 23);
-		add(btnRetour);
+		btnBackToMainMenu.setBounds(144, 364, 200, 50);
+		add(btnBackToMainMenu);
 
 	}
 }
