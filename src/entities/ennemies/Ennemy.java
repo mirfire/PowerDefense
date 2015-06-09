@@ -17,4 +17,7 @@ public class Ennemy extends Unit{
 	public void damageWorkstation(){
 		Workstation.setMaxHp = Workstation.getMaxHp() - dmg;
 	}
+	public void move(){
+		return;
+	}
 }
