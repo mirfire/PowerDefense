@@ -15,7 +15,7 @@ public class Unit {
 	}
 	
 	public boolean getAlive(){
-		if (this.HP > 0){
+		if (this.HP > 1){
 			this.alive = true;
 		}
 		else{
