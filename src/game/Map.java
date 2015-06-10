@@ -12,20 +12,22 @@ import javax.imageio.ImageIO;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
-public final class Map {
+public class Map {
 	private String mapName;
 	private String backgroundPath;
 	private Image backgroundImage;
 	private long width;
 	private long height;
 	private Case cases[][];
+	private int Chemin[][];
 	
-	public Map(String mapName, String backgroundPath, int width, int height) {
+	public Map(String mapName, String backgroundPath, int width, int height, int[][] Chemin) {
 		this.mapName = mapName;
 		this.backgroundPath = backgroundPath;
 		this.width = width;
 		this.height = height;
 		this.cases = new Case[height][width];
+		this.Chemin = Chemin;
 	}
 	
 	public Map() {
