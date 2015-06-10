@@ -1,7 +1,7 @@
 package game;
 
 import java.awt.Graphics;
-import Database.Save;
+import database.Save;
 import entities.*;
 import javax.swing.JPanel;
 
