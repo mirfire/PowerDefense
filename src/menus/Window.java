@@ -65,12 +65,12 @@ public class Window extends JFrame {
 		loadGameMenu = new LoadGameMenu();
 		inGameMenu = new InGameMenu();
 		
-		this.setContentPane(menusContainer);
-		menusContainer.setLayout(LayoutManager);
+		this.add(menusContainer);
+		/*menusContainer.setLayout(LayoutManager);
 		menusContainer.add(mainMenu, Menus.MAIN.toString());
 		menusContainer.add(newGameMenu, Menus.NEWGAME.toString());
 		menusContainer.add(loadGameMenu, Menus.LOADGAME.toString());
-		menusContainer.add(inGameMenu, Menus.INGAME.toString());
+		menusContainer.add(inGameMenu, Menus.INGAME.toString());*/
 	}
 	
 	public void setMenuMode() {
