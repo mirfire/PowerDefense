@@ -23,5 +23,4 @@ public class Coords {
 	public void setY(int y) {
 		Y = y;
 	}
-	
 }

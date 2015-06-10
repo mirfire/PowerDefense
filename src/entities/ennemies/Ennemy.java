@@ -1,3 +1,4 @@
+
 package entities.ennemies;
 import entities.Unit;
 import entities.Workstation;
@@ -25,4 +26,7 @@ public class Ennemy extends Unit{
 	public void move(){
 		return;
 	}
+	public static void SpawnEnnemies(){}
 }
+
+

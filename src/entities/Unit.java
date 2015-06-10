@@ -18,8 +18,7 @@ public class Unit {
 			this.alive = true;
 		}
 		else{
-			this.alive = false;
-			
+			this.alive = false;	
 		}
 		return alive;
 	}

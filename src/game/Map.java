@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Image;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -22,7 +23,12 @@ public final class Map {
 	private long width;
 	private long height;
 	private Case cases[][];
+
+	private int x;
+	private int y;
+
 	private SpawnPoint spawnPoint;
+
 	
 	public Map(String mapName, String backgroundPath, Image backgroundImage,
 			long width, long height, Case[][] cases, SpawnPoint spawnPoint) {
