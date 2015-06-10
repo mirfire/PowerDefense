@@ -9,6 +9,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
@@ -19,13 +20,14 @@ public final class Map {
 	private long width;
 	private long height;
 	private Case cases[][];
+	private SpawnPoint spawnPoint;
 	
 	public Map(String mapName, String backgroundPath, int width, int height) {
 		this.mapName = mapName;
 		this.backgroundPath = backgroundPath;
 		this.width = width;
 		this.height = height;
-		this.cases = new Case[height][width];
+		this.spawnPoint = new SpawnPoint(1,1);
 	}
 	
 	public Map() {
@@ -106,6 +108,8 @@ public final class Map {
 			this.width = (long) readData.get("width");
 			this.height = (long) readData.get("height");
 			this.cases = new Case[(int) height][(int) width];
+			JSONArray SpawnPoint = (JSONArray) readData.get("spawnPoint");
+			this.spawnPoint = new SpawnPoint((int) (long) SpawnPoint.get(0), (int) (long) SpawnPoint.get(1));
 		} 
 		catch (Exception e) {
 	        e.printStackTrace();
