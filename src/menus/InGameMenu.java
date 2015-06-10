@@ -1,22 +1,19 @@
 package menus;
 
-import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
+import java.awt.Font;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
-import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import java.awt.Font;
-import javax.swing.event.AncestorListener;
-import javax.swing.event.AncestorEvent;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 
 
 public class InGameMenu extends BaseMenu {
