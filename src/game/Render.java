@@ -81,7 +81,7 @@ public class Render extends JPanel implements Runnable {
 	private void Grid(Graphics g){		
         int larg = getWidth(); 
         int haut = getHeight();     
-        int dim = 40;        
+        int dim = Config.GAME_CELLSIZE;        
         for(int i = 0; i < larg; i +=dim) {
         	g.drawLine(i,0,i, haut); // Les lignes verticales de la grille
         	g.drawLine(0,i,larg, i); // Les lignes horizontales de la grille

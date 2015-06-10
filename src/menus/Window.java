@@ -1,5 +1,7 @@
 package menus;
 
+import game.Config;
+
 import java.awt.CardLayout;
 
 import javax.swing.JFrame;
@@ -61,7 +63,7 @@ public class Window extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(900, 900);
 		this.setResizable(false);
-		this.setTitle("PowerDefense");	
+		this.setTitle(Config.GAME_TITLE);	
 		LayoutManager = new CardLayout(0, 0);
 		menusContainer = new MenusContainer(this);
 		mainMenu = new MainMenu();
