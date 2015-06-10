@@ -33,10 +33,14 @@ public class Tower extends Unit  {
 /*	public void upgradeTower (Tower tower){
 		btnUpgrade.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (Game.getRessources() >= tower.cost*2){
+				if (game.getRessources() >= tower.cost*2){
+					game.setRessources(game.getRessources() - tower.cost*2);
+					tower.dmg = tower.dmg * 2;
+				}
+				else{
 					
 				}
 			}
-		});*/
-	}
+		});
+	}*/
 }
