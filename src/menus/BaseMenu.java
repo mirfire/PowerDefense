@@ -1,12 +1,13 @@
 package menus;
 
+import game.Coords;
+import game.Game;
+
 import java.awt.Graphics;
 import java.awt.Image;
+import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
-
-import game.Game;
-import game.Map;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -58,5 +59,15 @@ public abstract class BaseMenu extends JPanel {
 			e.printStackTrace();
 		}
 		g.drawImage(img, 0, 0, this);
+	}
+	
+	public Coords getClickedCase(MouseEvent e) {
+		int x=e.getX();
+	    int y=e.getY();
+	    x = Math.round(x / 40) + 1;
+	    y = Math.round(y / 40) + 1;
+	    System.out.println(x + "," + y);
+	    Coords clickedCase = new Coords(y,x);
+		return clickedCase;
 	}
 }

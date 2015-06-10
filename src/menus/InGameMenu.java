@@ -1,14 +1,14 @@
 package menus;
 
 import game.Render;
+
 import java.awt.Color;
 import java.awt.Font;
 import java.awt.Graphics;
-
 import java.awt.Panel;
-
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
@@ -20,6 +20,7 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
+import java.awt.event.MouseAdapter;
 
 public class InGameMenu extends BaseMenu {
 	static Render panelGame;
@@ -38,6 +39,12 @@ public class InGameMenu extends BaseMenu {
 		setLayout(null);
 		
 		panelGame = new Render(this);
+		panelGame.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent e) {
+				getClickedCase(e);
+			}
+		});
 		panelGame.setLayout(null);
 		panelGame.setBounds(10, 32, 600, 600);
 		add(panelGame);
@@ -155,7 +162,4 @@ public class InGameMenu extends BaseMenu {
 	public void setChckbxmntmPause(JCheckBoxMenuItem chckbxmntmPause) {
 		InGameMenu.chckbxmntmPause = chckbxmntmPause;
 	}
-	
-		
-
 }
