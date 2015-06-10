@@ -16,30 +16,27 @@ import org.json.simple.JSONValue;
 
 import database.ReadData;
 
-public final class Map {
+public class Map {
 	private String mapName;
 	private String backgroundPath;
 	private Image backgroundImage;
 	private long width;
 	private long height;
 	private Case cases[][];
-
 	private int x;
 	private int y;
-
 	private SpawnPoint spawnPoint;
+	private int Chemin[][];
 
-	
-	public Map(String mapName, String backgroundPath, Image backgroundImage,
-			long width, long height, Case[][] cases, SpawnPoint spawnPoint) {
-		super();
-		this.mapName = mapName;
+	public Map(String mapName, String backgroundPath, int width, int height, int[][] Chemin) {
 		this.backgroundPath = backgroundPath;
 		this.backgroundImage = backgroundImage;
 		this.width = width;
 		this.height = height;
 		this.cases = cases;
 		this.spawnPoint = spawnPoint;
+		this.cases = new Case[height][width];
+		this.Chemin = Chemin;
 	}
 	
 	public Map() {
