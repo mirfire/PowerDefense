@@ -31,7 +31,7 @@ public final class Map {
 	}
 	
 	public Map() {
-		readMap();
+		readMapFromFile();
 		try {
 			this.backgroundImage = ImageIO.read(new File(this.backgroundPath));
 		} catch (IOException e) {
@@ -95,7 +95,7 @@ public final class Map {
 		this.spawnPoint = spawnPoint;
 	}
 
-	private void readMap() {
+	private void readMapFromFile() {
 		String data = "", currentLine;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("map_01.json"));
