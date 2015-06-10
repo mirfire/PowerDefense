@@ -1,8 +1,9 @@
 package menus;
 
+import java.awt.CardLayout;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
-import java.awt.CardLayout;
 
 public class Window extends JFrame {	
 	private JPanel menusContainer;
@@ -16,8 +17,7 @@ public class Window extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 900, 900);
 		this.setResizable(false);
-		this.setTitle("PowerDefense");
-		
+		this.setTitle("PowerDefense");	
 		LayoutManager = new CardLayout(0, 0);
 		menusContainer = new JPanel();
 		mainMenu = new MainMenu();

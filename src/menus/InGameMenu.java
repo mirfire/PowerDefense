@@ -1,4 +1,5 @@
 package menus;
+
 import javax.swing.JPanel;
 import java.awt.Color;
 import javax.swing.JMenuBar;
@@ -12,6 +13,8 @@ import java.awt.event.InputEvent;
 import javax.swing.JLabel;
 import javax.swing.SwingConstants;
 import java.awt.Font;
+import javax.swing.event.AncestorListener;
+import javax.swing.event.AncestorEvent;
 
 
 public class InGameMenu extends BaseMenu {
@@ -20,9 +23,18 @@ public class InGameMenu extends BaseMenu {
 		setLayout(null);
 		
 		JPanel panelGame = new JPanel();
+		panelGame.addAncestorListener(new AncestorListener() {
+			public void ancestorAdded(AncestorEvent arg0) {
+			}
+			public void ancestorMoved(AncestorEvent arg0) {
+			}
+			public void ancestorRemoved(AncestorEvent arg0) {
+			}
+		});
 		panelGame.setBackground(Color.YELLOW);
 		panelGame.setBounds(10, 32, 600, 600);
 		add(panelGame);
+		panelGame.setLayout(null);
 		
 		JPanel panelMenuGame = new JPanel();
 		panelMenuGame.setBackground(Color.ORANGE);
