@@ -23,8 +23,9 @@ public class Save {
 			myStmt.executeUpdate(query);
 			System.out.println("partie sauvegardée");
 
-		} catch (SQLException e) {
-			;
+		} 
+		catch (SQLException e) {
+			e.printStackTrace();
 		}
 	}
 }
