@@ -1,10 +1,12 @@
 package menus;
 
 import java.awt.Graphics;
+import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
 
 import game.Game;
+import game.Map;
 
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
@@ -47,7 +49,14 @@ public abstract class BaseMenu extends JPanel {
 		window.setGameMode();
 	}
 	
-	public void setPanelGameBackground(JPanel panel) {
-		
+	public void setPanelGameBackground() {		
+		Graphics g = InGameMenu.panelGame.getGraphics();
+		Image img = null;
+		try {
+			img = ImageIO.read(new File("resources/maps/map_01.png"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		g.drawImage(img, 0, 0, this);
 	}
 }

@@ -14,7 +14,7 @@ import javax.swing.SwingConstants;
 import javax.swing.JTextPane;
 
 public class LoadGameMenu extends BaseMenu {
-	private JTextField textField;
+	
 
 	public LoadGameMenu() {
 		setLayout(null);

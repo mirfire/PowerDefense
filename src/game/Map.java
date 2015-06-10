@@ -9,7 +9,7 @@ import java.io.IOException;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
-public class Map {
+public final class Map {
 	private String mapName;
 	private String backgroundPath;
 	private Image backgroundImage;
