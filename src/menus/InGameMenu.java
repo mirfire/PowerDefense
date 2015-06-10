@@ -9,6 +9,9 @@ import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import java.awt.event.KeyEvent;
 import java.awt.event.InputEvent;
+import javax.swing.JLabel;
+import javax.swing.SwingConstants;
+import java.awt.Font;
 
 
 public class InGameMenu extends BaseMenu {
@@ -30,6 +33,13 @@ public class InGameMenu extends BaseMenu {
 		panelToolBar.setBackground(Color.PINK);
 		panelToolBar.setBounds(620, 32, 270, 600);
 		add(panelToolBar);
+		panelToolBar.setLayout(null);
+		
+		JLabel lblMapname = new JLabel("MapName");
+		lblMapname.setFont(new Font("Calibri", Font.PLAIN, 18));
+		lblMapname.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMapname.setBounds(10, 10, 250, 30);
+		panelToolBar.add(lblMapname);
 		
 		JMenuBar menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 900, 21);
