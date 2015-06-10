@@ -23,9 +23,6 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
 public class InGameMenu extends BaseMenu {
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -8351826923333261445L;
 	static Render panelGame;
 	static JPanel panelMenuGame;

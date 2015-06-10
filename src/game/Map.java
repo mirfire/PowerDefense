@@ -30,11 +30,9 @@ public class Map {
 
 	public Map(String mapName, String backgroundPath, int width, int height, int[][] Chemin) {
 		this.backgroundPath = backgroundPath;
-		this.backgroundImage = backgroundImage;
+		this.seekBackgroundImage(backgroundPath);;
 		this.width = width;
 		this.height = height;
-		this.cases = cases;
-		this.spawnPoint = spawnPoint;
 		this.cases = new Case[height][width];
 		this.Chemin = Chemin;
 	}

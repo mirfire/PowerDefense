@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
-import menus.InGameMenu;
 import javax.imageio.ImageIO;
 
 public class StackOverflow extends Ennemy{
