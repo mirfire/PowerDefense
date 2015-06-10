@@ -3,13 +3,16 @@ package menus;
 import game.Render;
 
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -44,6 +47,29 @@ public class InGameMenu extends BaseMenu {
 			@Override
 			public void mouseClicked(MouseEvent e) {
 				getClickedCase(e);
+				int x=e.getX();
+			    int y=e.getY();
+			    x = Math.round(x / 40) + 1;
+			    y = Math.round(y / 40) + 1;
+			    x=(x-1)*40;
+			    y=(y-1)*40;
+			    
+			   System.out.println(x);
+			   System.out.println(y);
+				JFrame frame = new JFrame("Display Image");  
+		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+
+		        
+		        panelGame.setLayout(null);
+				JLabel label = new JLabel();  
+		        label.setIcon(new ImageIcon("resources/t.jpg"));
+		        panelGame.add(label);
+		        Dimension size = label.getPreferredSize();
+		        label.setBounds(x, y, size.width, size.height);
+
+		        frame.setSize(10, 10);
+		        frame.setVisible(false);
+				
 			}
 		});
 		panelGame.setLayout(null);
