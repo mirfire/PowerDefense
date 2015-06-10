@@ -1,29 +1,17 @@
 package game;
 
 import java.awt.Image;
-import java.io.File;
-import java.io.IOException;
 
-import javax.imageio.ImageIO;
-
-public class Case {
-	private Coords coords;
-	private boolean buildable;
-	private boolean monsterPath;
-	private String spritePath;
-	private Image sprite;
+public abstract class Case {
+	protected Coords coords;
+	protected boolean buildable;
+	protected boolean monsterPath;
+	protected String spritePath;
+	protected Image sprite;
 	
-	public Case(int x, int y, String spritePath) {
+	public Case(int x, int y) {
 		this.coords.setX(x);
 		this.coords.setY(y);
-		this.buildable = true;
-		this.monsterPath = false;
-		this.spritePath = spritePath;
-		try {
-			this.sprite = ImageIO.read(new File(this.spritePath));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	public Coords getCoords() {
@@ -48,6 +36,22 @@ public class Case {
 
 	public void setSpritePath(String spritePath) {
 		this.spritePath = spritePath;
+	}
+
+	public boolean isMonsterPath() {
+		return monsterPath;
+	}
+
+	public void setMonsterPath(boolean monsterPath) {
+		this.monsterPath = monsterPath;
+	}
+
+	public Image getSprite() {
+		return sprite;
+	}
+
+	public void setSprite(Image sprite) {
+		this.sprite = sprite;
 	}
 	
 }

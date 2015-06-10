@@ -1,6 +1,5 @@
 package menus;
 
-import java.awt.Color;
 import java.awt.Frame;
 import java.awt.Graphics;
 
@@ -8,6 +7,10 @@ import javax.swing.JPanel;
 
 public class MenusContainer extends JPanel implements Runnable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 871294247435865586L;
 	Thread menuThread =  new Thread(this);
 	Frame windowFrame;
 	

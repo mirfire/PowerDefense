@@ -1,7 +1,5 @@
-package entities.ennemies;
 
-import entities.towers.*;
-import game.*;
+package entities.ennemies;
 import entities.Unit;
 import entities.Workstation;
 
@@ -10,8 +8,6 @@ public class Ennemy extends Unit{
 	protected int walkSpeed;
 	protected int droppedRessources;
 	protected String Resistances;
-	Ennemy ennemy;
-	SpawnPoint spawnPoint;
 	
 	public Ennemy(String name, int HP, int dmg, int walkSpeed, int droppedRessources, String Resistances, String spritePath) {
 		super(name, HP, spritePath);
@@ -32,3 +28,5 @@ public class Ennemy extends Unit{
 	}
 	public static void SpawnEnnemies(){}
 }
+
+

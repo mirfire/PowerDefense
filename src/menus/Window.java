@@ -1,11 +1,17 @@
 package menus;
 
+import game.Config;
+
 import java.awt.CardLayout;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Window extends JFrame {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5409287454413733912L;
 	private MenusContainer menusContainer;
 	private MainMenu mainMenu;
 	private NewGameMenu newGameMenu;
@@ -57,7 +63,7 @@ public class Window extends JFrame {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setSize(900, 900);
 		this.setResizable(false);
-		this.setTitle("PowerDefense");	
+		this.setTitle(Config.GAME_TITLE);	
 		LayoutManager = new CardLayout(0, 0);
 		menusContainer = new MenusContainer(this);
 		mainMenu = new MainMenu();

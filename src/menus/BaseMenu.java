@@ -16,6 +16,10 @@ import javax.swing.JPanel;
 import javax.swing.SwingUtilities;
 
 public abstract class BaseMenu extends JPanel {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -298918690071573431L;
 	JOptionPane dlgConfirmExitGame;
 		
 	public void backToMainMenu() {

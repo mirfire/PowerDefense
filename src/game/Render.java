@@ -1,10 +1,18 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class Render extends JPanel implements Runnable {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7990237525170526056L;
 	Thread menuThread =  new Thread(this);
 	Game game;
 	Map map;
@@ -42,21 +50,38 @@ public class Render extends JPanel implements Runnable {
 		
 		drawBackgroundImage(g);
 		
-		
+		// TODO : drawCase(g);
+		drawSpawnPoint(g);
 		Grid(g);
 		
 		drawFPS(g);
 		
 	}
 	
-	private void drawCase(Case cases[][]) {
-		
+	private void drawCase(Graphics g) {
+		Case cases[][]  = this.game.map.getCases();
+		for (Case[] u: cases) {
+		    for (Case elem: u) {
+		    	g.drawImage(elem.getSprite(), 0, 0, this);
+		    }
+		}
+	}
+	
+	private void drawSpawnPoint(Graphics g) {
+		try {
+			Image spawnPointImage = ImageIO.read(new File("resources/sprites/lightning.png"));
+			int x = (this.game.map.getSpawnPoint().getCoords().getX() - 1) * 40 + 1;
+			int y = (this.game.map.getSpawnPoint().getCoords().getY() - 1) * 40 + 1;
+			g.drawImage(spawnPointImage, y, x, this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void Grid(Graphics g){		
         int larg = getWidth(); 
         int haut = getHeight();     
-        int dim = 40;        
+        int dim = Config.GAME_CELLSIZE;        
         for(int i = 0; i < larg; i +=dim) {
         	g.drawLine(i,0,i, haut); // Les lignes verticales de la grille
         	g.drawLine(0,i,larg, i); // Les lignes horizontales de la grille

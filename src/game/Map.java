@@ -1,6 +1,7 @@
 package game;
 
 import java.awt.Image;
+
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -9,6 +10,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
+import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
@@ -19,19 +21,23 @@ public final class Map {
 	private long width;
 	private long height;
 	private Case cases[][];
+
 	private int x;
 	private int y;
+
+	private SpawnPoint spawnPoint;
+
 	
-	public Map(String mapName, String backgroundPath, int width, int height) {
+	public Map(String mapName, String backgroundPath) {
 		this.mapName = mapName;
 		this.backgroundPath = backgroundPath;
-		this.width = width;
-		this.height = height;
-		this.cases = new Case[height][width];
+		this.width = 15;
+		this.height = 15;
+		this.spawnPoint = new SpawnPoint(1,1);
 	}
 	
 	public Map() {
-		readMap();
+		readMapFromFile();
 		try {
 			this.backgroundImage = ImageIO.read(new File(this.backgroundPath));
 		} catch (IOException e) {
@@ -87,7 +93,15 @@ public final class Map {
 		this.backgroundImage = backgroundImage;
 	}
 	
-	private void readMap() {
+	public SpawnPoint getSpawnPoint() {
+		return spawnPoint;
+	}
+
+	public void setSpawnPoint(SpawnPoint spawnPoint) {
+		this.spawnPoint = spawnPoint;
+	}
+
+	private void readMapFromFile() {
 		String data = "", currentLine;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("map_01.json"));
@@ -105,12 +119,18 @@ public final class Map {
 			JSONObject  readData = (JSONObject )obj;
 			this.mapName = (String) readData.get("mapName");
 			this.backgroundPath = (String) readData.get("backgroundPath");
-			this.width = (long) readData.get("width");
-			this.height = (long) readData.get("height");
+			this.width = 15;
+			this.height = 15;
 			this.cases = new Case[(int) height][(int) width];
+			JSONArray SpawnPoint = (JSONArray) readData.get("spawnPoint");
+			this.spawnPoint = new SpawnPoint((int) (long) SpawnPoint.get(0), (int) (long) SpawnPoint.get(1));
 		} 
 		catch (Exception e) {
 	        e.printStackTrace();
 	    }
+	}
+	
+	private void readMapFromDB() {
+		
 	}
 }

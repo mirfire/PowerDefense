@@ -13,6 +13,11 @@ import javax.swing.event.AncestorListener;
 
 public class MainMenu extends BaseMenu {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -4112595258490648746L;
+
 	public MainMenu() {
 		setLayout(null);
 		addAncestorListener(new AncestorListener() {
