@@ -10,7 +10,6 @@ public class Ennemy extends Unit{
 	protected int droppedRessources;
 	protected String Resistances;
 	
-	
 	public Ennemy(String name, int HP, int dmg, int walkSpeed, int droppedRessources, String Resistances, String spritePath) {
 		super(name, HP, spritePath);
 		this.dmg = dmg;
