@@ -38,10 +38,15 @@ public class Render extends JPanel implements Runnable {
 	}
 	
 	public void paintComponent(Graphics g) {
-		g.clearRect(0, 0, this.parentPanel.getWidth(), this.parentPanel.getHeight());
+		clearGameScreen(g);
 		
 		drawBackgroundImage(g);
+		
 		drawFPS(g);
+	}
+	
+	private void clearGameScreen(Graphics g) {
+		g.clearRect(0, 0, this.parentPanel.getWidth(), this.parentPanel.getHeight());
 	}
 	
 	private void drawFPS(Graphics g) {
