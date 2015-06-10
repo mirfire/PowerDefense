@@ -1,7 +1,6 @@
 package game;
 
 import java.awt.Image;
-
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -15,6 +14,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
 import database.ReadData;
+import entities.Workstation;
 
 public class Map {
 	private String mapName;
@@ -26,6 +26,7 @@ public class Map {
 	private int x;
 	private int y;
 	private SpawnPoint spawnPoint;
+	private Workstation workstation;
 	private int Chemin[][];
 
 	public Map(String mapName, String backgroundPath, int width, int height, int[][] Chemin) {
@@ -44,6 +45,7 @@ public class Map {
 		this.width = 0;
 		this.height = 0;
 		this.spawnPoint = null;
+		this.workstation = null;
 	}
 
 	public Map(String mapName, String backgroundPath) {
