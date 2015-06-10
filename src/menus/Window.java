@@ -12,6 +12,46 @@ public class Window extends JFrame {
 	private LoadGameMenu loadGameMenu;
 	private InGameMenu inGameMenu;
 	static CardLayout LayoutManager;
+	
+	public JPanel getMenusContainer() {
+		return menusContainer;
+	}
+
+	public void setMenusContainer(JPanel menusContainer) {
+		this.menusContainer = menusContainer;
+	}
+
+	public MainMenu getMainMenu() {
+		return mainMenu;
+	}
+
+	public void setMainMenu(MainMenu mainMenu) {
+		this.mainMenu = mainMenu;
+	}
+
+	public NewGameMenu getNewGameMenu() {
+		return newGameMenu;
+	}
+
+	public void setNewGameMenu(NewGameMenu newGameMenu) {
+		this.newGameMenu = newGameMenu;
+	}
+
+	public LoadGameMenu getLoadGameMenu() {
+		return loadGameMenu;
+	}
+
+	public void setLoadGameMenu(LoadGameMenu loadGameMenu) {
+		this.loadGameMenu = loadGameMenu;
+	}
+
+	public InGameMenu getInGameMenu() {
+		return inGameMenu;
+	}
+
+	public void setInGameMenu(InGameMenu inGameMenu) {
+		this.inGameMenu = inGameMenu;
+	}
 
 	public Window() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

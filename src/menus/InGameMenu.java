@@ -18,11 +18,20 @@ import javax.swing.event.AncestorEvent;
 
 
 public class InGameMenu extends BaseMenu {
-
+	JPanel panelGame, panelMenuGame, panelToolBar;
+	JLabel lblMapname;
+	JMenuBar menuBar;
+	JMenu mnGame;
+	JMenuItem mntmLeaveGame, mntmSauvegarder;
+	JCheckBoxMenuItem chckbxmntmPause;
+	JSeparator separator;
+	
 	public InGameMenu() {
+		
+		
 		setLayout(null);
 		
-		JPanel panelGame = new JPanel();
+		panelGame = new JPanel();
 		panelGame.addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent arg0) {
 			}
@@ -36,44 +45,118 @@ public class InGameMenu extends BaseMenu {
 		add(panelGame);
 		panelGame.setLayout(null);
 		
-		JPanel panelMenuGame = new JPanel();
+		panelMenuGame = new JPanel();
 		panelMenuGame.setBackground(Color.ORANGE);
 		panelMenuGame.setBounds(10, 643, 880, 226);
 		add(panelMenuGame);
 		
-		JPanel panelToolBar = new JPanel();
+		panelToolBar = new JPanel();
+		panelToolBar.setLayout(null);
 		panelToolBar.setBackground(Color.PINK);
 		panelToolBar.setBounds(620, 32, 270, 600);
 		add(panelToolBar);
-		panelToolBar.setLayout(null);
 		
-		JLabel lblMapname = new JLabel("MapName");
+		lblMapname = new JLabel("MapName");
 		lblMapname.setFont(new Font("Calibri", Font.PLAIN, 18));
 		lblMapname.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMapname.setBounds(10, 10, 250, 30);
 		panelToolBar.add(lblMapname);
 		
-		JMenuBar menuBar = new JMenuBar();
+		menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 900, 21);
 		add(menuBar);
 		
-		JMenu mnJeu = new JMenu("Jeu");
-		menuBar.add(mnJeu);
+		mnGame = new JMenu("Jeu");
+		menuBar.add(mnGame);
 		
-		JCheckBoxMenuItem chckbxmntmPause = new JCheckBoxMenuItem("Pause");
+		chckbxmntmPause = new JCheckBoxMenuItem("Pause");
 		chckbxmntmPause.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, 0));
-		mnJeu.add(chckbxmntmPause);
+		mnGame.add(chckbxmntmPause);
 		
-		JMenuItem mntmSauvegarder = new JMenuItem("Sauvegarder");
+		mntmSauvegarder = new JMenuItem("Sauvegarder");
 		mntmSauvegarder.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
-		mnJeu.add(mntmSauvegarder);
+		mnGame.add(mntmSauvegarder);
 		
-		JSeparator separator = new JSeparator();
-		mnJeu.add(separator);
+		separator = new JSeparator();
+		mnGame.add(separator);
 		
-		JMenuItem mntmQuitter = new JMenuItem("Quitter");
-		mntmQuitter.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
-		mnJeu.add(mntmQuitter);
+		mntmLeaveGame = new JMenuItem("Quitter");
+		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
+		mnGame.add(mntmLeaveGame);
 
 	}
+
+	public JPanel getPanelGame() {
+		return panelGame;
+	}
+
+	public void setPanelGame(JPanel panelGame) {
+		this.panelGame = panelGame;
+	}
+
+	public JPanel getPanelMenuGame() {
+		return panelMenuGame;
+	}
+
+	public void setPanelMenuGame(JPanel panelMenuGame) {
+		this.panelMenuGame = panelMenuGame;
+	}
+
+	public JPanel getPanelToolBar() {
+		return panelToolBar;
+	}
+
+	public void setPanelToolBar(JPanel panelToolBar) {
+		this.panelToolBar = panelToolBar;
+	}
+
+	public JLabel getLblMapname() {
+		return lblMapname;
+	}
+
+	public void setLblMapname(JLabel lblMapname) {
+		this.lblMapname = lblMapname;
+	}
+
+	public JMenuBar getMenuBar() {
+		return menuBar;
+	}
+
+	public void setMenuBar(JMenuBar menuBar) {
+		this.menuBar = menuBar;
+	}
+
+	public JMenu getMnGame() {
+		return mnGame;
+	}
+
+	public void setMnGame(JMenu mnGame) {
+		this.mnGame = mnGame;
+	}
+
+	public JMenuItem getMntmLeaveGame() {
+		return mntmLeaveGame;
+	}
+
+	public void setMntmLeaveGame(JMenuItem mntmLeaveGame) {
+		this.mntmLeaveGame = mntmLeaveGame;
+	}
+
+	public JMenuItem getMntmSauvegarder() {
+		return mntmSauvegarder;
+	}
+
+	public void setMntmSauvegarder(JMenuItem mntmSauvegarder) {
+		this.mntmSauvegarder = mntmSauvegarder;
+	}
+
+	public JCheckBoxMenuItem getChckbxmntmPause() {
+		return chckbxmntmPause;
+	}
+
+	public void setChckbxmntmPause(JCheckBoxMenuItem chckbxmntmPause) {
+		this.chckbxmntmPause = chckbxmntmPause;
+	}
+	
+	
 }

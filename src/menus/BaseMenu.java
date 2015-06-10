@@ -1,7 +1,12 @@
 package menus;
 
+import java.awt.Graphics;
+import java.io.File;
+import java.io.IOException;
+
 import game.Game;
 
+import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
@@ -9,7 +14,7 @@ import javax.swing.SwingUtilities;
 
 public abstract class BaseMenu extends JPanel {
 	JOptionPane dlgConfirmExitGame;
-	
+		
 	public void backToMainMenu() {
 		Window.LayoutManager.show(getParent(), Menus.MAIN.toString());
 	}
@@ -40,5 +45,9 @@ public abstract class BaseMenu extends JPanel {
 	public void windowSetGameMode() {
 		Window window = (Window) SwingUtilities.getWindowAncestor(getParent());
 		window.setGameMode();
+	}
+	
+	public void setPanelGameBackground(JPanel panel) {
+		
 	}
 }
