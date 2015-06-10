@@ -1,7 +1,11 @@
 package game;
 
 import java.awt.Graphics;
+import java.awt.Image;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class Render extends JPanel implements Runnable {	
@@ -42,15 +46,32 @@ public class Render extends JPanel implements Runnable {
 		
 		drawBackgroundImage(g);
 		
-		
+		// TODO : drawCase(g);
+		drawSpawnPoint(g);
 		Grid(g);
 		
 		drawFPS(g);
 		
 	}
 	
-	private void drawCase(Case cases[][]) {
-		
+	private void drawCase(Graphics g) {
+		Case cases[][]  = this.game.map.getCases();
+		for (Case[] u: cases) {
+		    for (Case elem: u) {
+		    	g.drawImage(elem.getSprite(), 0, 0, this);
+		    }
+		}
+	}
+	
+	private void drawSpawnPoint(Graphics g) {
+		try {
+			Image spawnPointImage = ImageIO.read(new File("resources/sprites/lightning.png"));
+			int x = (this.game.map.getSpawnPoint().getCoords().getX() - 1) * 40 + 1;
+			int y = (this.game.map.getSpawnPoint().getCoords().getY() - 1) * 40 + 1;
+			g.drawImage(spawnPointImage, y, x, this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	private void Grid(Graphics g){		

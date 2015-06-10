@@ -1,6 +1,9 @@
 {
-    "mapName": "Carte 1",
-    "backgroundPath": "resources/maps/map_01.png",
-    "width": 600,
-    "height": 600,
+	"mapName": "Carte 1",
+	"backgroundPath": "resources/maps/map_01.png",
+	"width": 600,
+	"height": 600,
+	"spawnPoint": [3,	1],
+	"workstation": [12,	15],
+	"path": []
 }
