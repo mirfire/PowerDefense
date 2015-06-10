@@ -5,7 +5,6 @@ import javax.swing.JPanel;
 public class Game {
 	private String gameName;
 	private int ressources;
-	//Map map = new Map();
 	Map map;
 	private int score;
 	private int survivedTime;	//a modifier
