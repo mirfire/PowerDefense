@@ -1,9 +1,5 @@
 package entities.towers;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 import entities.Unit;
-import game.Game;
 
 
 
@@ -30,6 +26,7 @@ public class Tower extends Unit  {
 		this.HP = 0;	
 	
 }
+}
 /*	public void upgradeTower (Tower tower){
 		btnUpgrade.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -43,4 +40,16 @@ public class Tower extends Unit  {
 			}
 		});
 	}*/
-}
+	
+	
+	/*public boolean checkUnit( Unit enemy ){ // check if the enemy unit is in range
+		if (Ennemy.getX()-Tower.getX()<=3||Tower.getX()-Ennemy.getX()>=-3 && Ennemy.getY()-Tower.getY()<=3||Tower.getY()-Ennemy.getY()>=-3){
+			
+				
+				return true;
+			}
+		}
+			return true;
+		}
+		return false;
+}*/
