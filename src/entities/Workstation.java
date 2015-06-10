@@ -1,16 +1,29 @@
 package entities;
 
 public class Workstation {
-	private static int maxHp = 100;
-	private static int life = 100;
+	private int maxHp = 100;
+	private int life = 100;
 	
-	public static int getlife() {
+	public int getMaxHp() {
+		return maxHp;
+	}
+
+
+	public void setMaxHp(int maxHp) {
+		this.maxHp = maxHp;
+	}
+
+
+	public int getLife() {
 		return life;
 	}
 
-	public static void setlife(int life) {
-		life = life;
+
+	public void setLife(int life) {
+		this.life = life;
 	}
+
+
 	public void repair(int life, int ressources){
 		return;
 	}
