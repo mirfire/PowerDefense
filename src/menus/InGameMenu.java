@@ -1,30 +1,31 @@
 package menus;
 
-import javax.swing.JPanel;
 import java.awt.Color;
-import javax.swing.JMenuBar;
-import javax.swing.JMenu;
+import java.awt.Font;
+import java.awt.event.InputEvent;
+import java.awt.event.KeyEvent;
+
 import javax.swing.JCheckBoxMenuItem;
+import javax.swing.JLabel;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
-import java.awt.event.KeyEvent;
-import java.awt.event.InputEvent;
-import javax.swing.JLabel;
 import javax.swing.SwingConstants;
-import java.awt.Font;
-import javax.swing.event.AncestorListener;
-import javax.swing.event.AncestorEvent;
 
 
 public class InGameMenu extends BaseMenu {
-	JPanel panelGame, panelMenuGame, panelToolBar;
-	JLabel lblMapname;
-	JMenuBar menuBar;
-	JMenu mnGame;
-	JMenuItem mntmLeaveGame, mntmSauvegarder;
-	JCheckBoxMenuItem chckbxmntmPause;
-	JSeparator separator;
+	public static JPanel panelGame;
+	static JPanel panelMenuGame;
+	static JPanel panelToolBar;
+	static JLabel lblMapname;
+	static JMenuBar menuBar;
+	static JMenu mnGame;
+	static JMenuItem mntmLeaveGame, mntmSauvegarder;
+	static JCheckBoxMenuItem chckbxmntmPause;
+	static JSeparator separator;
 	
 	public InGameMenu() {
 		
@@ -32,18 +33,9 @@ public class InGameMenu extends BaseMenu {
 		setLayout(null);
 		
 		panelGame = new JPanel();
-		panelGame.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent arg0) {
-			}
-			public void ancestorMoved(AncestorEvent arg0) {
-			}
-			public void ancestorRemoved(AncestorEvent arg0) {
-			}
-		});
-		panelGame.setBackground(Color.YELLOW);
+		panelGame.setLayout(null);
 		panelGame.setBounds(10, 32, 600, 600);
 		add(panelGame);
-		panelGame.setLayout(null);
 		
 		panelMenuGame = new JPanel();
 		panelMenuGame.setBackground(Color.ORANGE);
@@ -91,7 +83,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setPanelGame(JPanel panelGame) {
-		this.panelGame = panelGame;
+		InGameMenu.panelGame = panelGame;
 	}
 
 	public JPanel getPanelMenuGame() {
@@ -99,7 +91,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setPanelMenuGame(JPanel panelMenuGame) {
-		this.panelMenuGame = panelMenuGame;
+		InGameMenu.panelMenuGame = panelMenuGame;
 	}
 
 	public JPanel getPanelToolBar() {
@@ -107,7 +99,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setPanelToolBar(JPanel panelToolBar) {
-		this.panelToolBar = panelToolBar;
+		InGameMenu.panelToolBar = panelToolBar;
 	}
 
 	public JLabel getLblMapname() {
@@ -115,7 +107,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setLblMapname(JLabel lblMapname) {
-		this.lblMapname = lblMapname;
+		InGameMenu.lblMapname = lblMapname;
 	}
 
 	public JMenuBar getMenuBar() {
@@ -123,7 +115,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setMenuBar(JMenuBar menuBar) {
-		this.menuBar = menuBar;
+		InGameMenu.menuBar = menuBar;
 	}
 
 	public JMenu getMnGame() {
@@ -131,7 +123,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setMnGame(JMenu mnGame) {
-		this.mnGame = mnGame;
+		InGameMenu.mnGame = mnGame;
 	}
 
 	public JMenuItem getMntmLeaveGame() {
@@ -139,7 +131,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setMntmLeaveGame(JMenuItem mntmLeaveGame) {
-		this.mntmLeaveGame = mntmLeaveGame;
+		InGameMenu.mntmLeaveGame = mntmLeaveGame;
 	}
 
 	public JMenuItem getMntmSauvegarder() {
@@ -147,7 +139,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setMntmSauvegarder(JMenuItem mntmSauvegarder) {
-		this.mntmSauvegarder = mntmSauvegarder;
+		InGameMenu.mntmSauvegarder = mntmSauvegarder;
 	}
 
 	public JCheckBoxMenuItem getChckbxmntmPause() {
@@ -155,7 +147,7 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public void setChckbxmntmPause(JCheckBoxMenuItem chckbxmntmPause) {
-		this.chckbxmntmPause = chckbxmntmPause;
+		InGameMenu.chckbxmntmPause = chckbxmntmPause;
 	}
 	
 	

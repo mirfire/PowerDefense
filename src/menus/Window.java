@@ -5,7 +5,7 @@ import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Window extends JFrame {	
+public class Window extends JFrame implements Runnable {	
 	private JPanel menusContainer;
 	private MainMenu mainMenu;
 	private NewGameMenu newGameMenu;
@@ -79,5 +79,10 @@ public class Window extends JFrame {
 	
 	public void setGameMode() {
 		setBounds(100, 100, 900, 900);
+	}
+
+	@Override
+	public void run() {
+		this.setVisible(true);		
 	}
 }

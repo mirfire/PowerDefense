@@ -14,6 +14,7 @@ import javax.swing.event.AncestorListener;
 public class MainMenu extends BaseMenu {
 
 	public MainMenu() {
+		setLayout(null);
 		addAncestorListener(new AncestorListener() {
 			public void ancestorAdded(AncestorEvent arg0) {
 				windowSetMenuMode();
@@ -23,7 +24,6 @@ public class MainMenu extends BaseMenu {
 			public void ancestorRemoved(AncestorEvent arg0) {
 			}
 		});
-		setLayout(null);
 		
 		JButton btnNouvellePartie = new JButton("Nouvelle Partie");
 		btnNouvellePartie.addActionListener(new ActionListener() {

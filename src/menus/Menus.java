@@ -13,7 +13,6 @@ public enum Menus {
 	}
 	
 	public String toString() {
-		return this.typeMenu;
-		
+		return this.typeMenu;		
 	}
 }
