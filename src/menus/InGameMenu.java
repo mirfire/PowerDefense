@@ -2,9 +2,11 @@ package menus;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
+import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -28,7 +30,6 @@ public class InGameMenu extends BaseMenu {
 	static JSeparator separator;
 	
 	public InGameMenu() {
-		
 		
 		setLayout(null);
 		
@@ -75,7 +76,7 @@ public class InGameMenu extends BaseMenu {
 		mntmLeaveGame = new JMenuItem("Quitter");
 		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
 		mnGame.add(mntmLeaveGame);
-
+		
 	}
 
 	public JPanel getPanelGame() {

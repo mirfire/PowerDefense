@@ -10,7 +10,7 @@ import java.sql.Statement;
 public class Save {
 	
 
-	public static void main(String[] args) {
+	public static void Saved() {
 		AjouterP("une",30,150,45,1,5);
 		try {
 			Connection myConn = DriverManager.getConnection("jdbc:mysql://localhost:3306/powerdefense", "antho","123");

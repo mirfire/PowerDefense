@@ -1,7 +1,8 @@
 package game;
 
 import java.awt.Graphics;
-
+import Database.Save;
+import entities.*;
 import javax.swing.JPanel;
 
 public class Game {
@@ -13,10 +14,19 @@ public class Game {
 	private int survivedTime;	//a modifier
 	private int kills;
 	private boolean pause;
+	Game partie1 = new Game("partie une");
+	
+	public String getGameName() {
+		return gameName;
+	}
+
+	public void setGameName(String gameName) {
+		this.gameName = gameName;
+	}
 	
 	public Game(String gameName) {
 		this.ressources = 300;
-		this.gameName = gameName;
+		this.setGameName(gameName);
 		this.score = 0;
 		this.survivedTime = 0;
 		this.kills = 0;
@@ -46,4 +56,5 @@ public class Game {
 	public void renderGame(JPanel panelGame) {
 		
 	}
+
 }
