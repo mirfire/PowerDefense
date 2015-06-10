@@ -19,6 +19,8 @@ public final class Map {
 	private long width;
 	private long height;
 	private Case cases[][];
+	private int x;
+	private int y;
 	
 	public Map(String mapName, String backgroundPath, int width, int height) {
 		this.mapName = mapName;
