@@ -9,7 +9,7 @@ public class Ennemy extends Unit{
 	protected int walkSpeed;
 	protected int droppedRessources;
 	protected String Resistances;
-	Workstation workstation = new Workstation();
+	
 	
 	public Ennemy(String name, int HP, int dmg, int walkSpeed, int droppedRessources, String Resistances, String spritePath) {
 		super(name, HP, spritePath);
@@ -21,7 +21,7 @@ public class Ennemy extends Unit{
 
 	
 	public void damageWorkstation(){
-		workstation.setLife(workstation.getLife() - dmg);
+		Workstation.workstation.setLife(Workstation.workstation.getLife() - dmg);
 		this.HP = 0;
 	}
 	
