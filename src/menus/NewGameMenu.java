@@ -56,5 +56,5 @@ public class NewGameMenu extends BaseMenu {
 		});
 		btnLaunchNewGame.setBounds(150, 378, 200, 50);
 		add(btnLaunchNewGame);
-	}
+	}	
 }
