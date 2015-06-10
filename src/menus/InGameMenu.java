@@ -4,7 +4,9 @@ import game.Render;
 
 import java.awt.Color;
 import java.awt.Font;
+
 import java.awt.Panel;
+
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
@@ -18,7 +20,6 @@ import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
-
 public class InGameMenu extends BaseMenu {
 	static Render panelGame;
 	static JPanel panelMenuGame;
@@ -30,9 +31,10 @@ public class InGameMenu extends BaseMenu {
 	static JCheckBoxMenuItem chckbxmntmPause;
 	static JSeparator separator;
 	
+	
 	public InGameMenu() {
 		
-		
+	
 		setLayout(null);
 		
 		panelGame = new Render(this);
@@ -87,6 +89,7 @@ public class InGameMenu extends BaseMenu {
 
 	public void setPanelGame(Render panelGame) {
 		InGameMenu.panelGame = panelGame;
+
 	}
 
 	public JPanel getPanelMenuGame() {
@@ -153,5 +156,6 @@ public class InGameMenu extends BaseMenu {
 		InGameMenu.chckbxmntmPause = chckbxmntmPause;
 	}
 	
-	
+		
+
 }
