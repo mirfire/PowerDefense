@@ -17,7 +17,6 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
-import javax.swing.SwingUtilities;
 
 
 public class InGameMenu extends BaseMenu {
