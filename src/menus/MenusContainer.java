@@ -21,29 +21,10 @@ public class MenusContainer extends JPanel implements Runnable {
 	public MenusContainer(Frame frame) {
 		menuThread.start();
 		this.windowFrame = frame;
-	}
-	
-
-	
-	public void paintComponent(Graphics g) {
-		drawFPS(g);		
-		
-		}
-	
+	}	
 	
 	public void run() {
 		System.out.println("Menus lancés");
-		
-		long lastFrame = System.currentTimeMillis();
-		
-		// Boucle de l'interface
-		while(true) {			
-			try {
-				Thread.sleep(DELAY);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
-		}
 	}
 	
 	private void drawFPS(Graphics g) {

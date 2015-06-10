@@ -5,7 +5,8 @@ import javax.swing.JPanel;
 public class Game {
 	private String gameName;
 	private int ressources;
-	Map map = new Map();
+	//Map map = new Map();
+	Map map;
 	private int score;
 	private int survivedTime;	//a modifier
 	private int kills;
@@ -21,6 +22,7 @@ public class Game {
 	
 	public Game(String gameName) {
 		this.ressources = 300;
+		this.map = Map.readMapFromDB(1);
 		this.setGameName(gameName);
 		this.score = 0;
 		this.survivedTime = 0;

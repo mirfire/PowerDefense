@@ -7,6 +7,10 @@ public class SpawnPoint {
 		setCoords(new Coords(x, y));
 	}
 	
+	public SpawnPoint() {
+		coords = new Coords(0,0);
+	}
+
 	public Coords getCoords() {
 		return coords;
 	}

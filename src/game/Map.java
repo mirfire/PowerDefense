@@ -13,6 +13,8 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
 
+import database.ReadData;
+
 public final class Map {
 	private String mapName;
 	private String backgroundPath;
@@ -22,6 +24,27 @@ public final class Map {
 	private Case cases[][];
 	private SpawnPoint spawnPoint;
 	
+	public Map(String mapName, String backgroundPath, Image backgroundImage,
+			long width, long height, Case[][] cases, SpawnPoint spawnPoint) {
+		super();
+		this.mapName = mapName;
+		this.backgroundPath = backgroundPath;
+		this.backgroundImage = backgroundImage;
+		this.width = width;
+		this.height = height;
+		this.cases = cases;
+		this.spawnPoint = spawnPoint;
+	}
+	
+	public Map() {
+		this.mapName = null;
+		this.backgroundPath = null;
+		this.backgroundImage = null;
+		this.width = 0;
+		this.height = 0;
+		this.spawnPoint = null;
+	}
+
 	public Map(String mapName, String backgroundPath) {
 		this.mapName = mapName;
 		this.backgroundPath = backgroundPath;
@@ -30,13 +53,8 @@ public final class Map {
 		this.spawnPoint = new SpawnPoint(1,1);
 	}
 	
-	public Map() {
-		readMapFromFile();
-		try {
-			this.backgroundImage = ImageIO.read(new File(this.backgroundPath));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+	public Map(int mapID) {
+		readMapFromDB(mapID);
 	}
 	
 	public String getMapName() {
@@ -132,7 +150,8 @@ public final class Map {
 	    }
 	}
 	
-	private void readMapFromDB() {
-		
+	static Map readMapFromDB(int mapID) {
+		ReadData readData = new ReadData();
+		return readData.readMapFromDB(mapID);
 	}
 }
