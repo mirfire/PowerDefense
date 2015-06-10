@@ -1,6 +1,12 @@
 package entities;
 
+import game.Game;
+
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 public class Workstation {
+	public static Workstation workstation = new Workstation();
 	private int maxHp = 100;
 	private int life = 100;
 	
@@ -9,8 +15,8 @@ public class Workstation {
 	}
 
 
-	public void setMaxHp(int i) {
-		this.maxHp = i;
+	public void setMaxHp(int maxHp) {
+		this.maxHp = maxHp;
 	}
 
 
@@ -19,12 +25,20 @@ public class Workstation {
 	}
 
 
-	public void setLife(int i) {
-		this.life = i;
+	public void setLife(int life) {
+		this.life = life;
 	}
 
 
-	public void repair(int life, int ressources){
+/*	public void repair(int life, int ressources){
+		btnRepair.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (life <= 8 && Game.getRessources() >= 20){
+					Game.setRessources(Game.getRessources() - 20);
+					workstation.life = life + 5;
+				}
+			}
+		});
 		return;
-	}
+	}*/
 }
