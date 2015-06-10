@@ -5,8 +5,8 @@ import java.awt.CardLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
-public class Window extends JFrame implements Runnable {	
-	private JPanel menusContainer;
+public class Window extends JFrame {	
+	private MenusContainer menusContainer;
 	private MainMenu mainMenu;
 	private NewGameMenu newGameMenu;
 	private LoadGameMenu loadGameMenu;
@@ -17,7 +17,7 @@ public class Window extends JFrame implements Runnable {
 		return menusContainer;
 	}
 
-	public void setMenusContainer(JPanel menusContainer) {
+	public void setMenusContainer(MenusContainer menusContainer) {
 		this.menusContainer = menusContainer;
 	}
 
@@ -55,11 +55,11 @@ public class Window extends JFrame implements Runnable {
 
 	public Window() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 900, 900);
+		setSize(900, 900);
 		this.setResizable(false);
 		this.setTitle("PowerDefense");	
 		LayoutManager = new CardLayout(0, 0);
-		menusContainer = new JPanel();
+		menusContainer = new MenusContainer(this);
 		mainMenu = new MainMenu();
 		newGameMenu = new NewGameMenu();
 		loadGameMenu = new LoadGameMenu();
@@ -74,15 +74,10 @@ public class Window extends JFrame implements Runnable {
 	}
 	
 	public void setMenuMode() {
-		setBounds(100, 100, 510, 520);
+		setSize(510, 520);
 	}
 	
 	public void setGameMode() {
-		setBounds(100, 100, 900, 900);
-	}
-
-	@Override
-	public void run() {
-		this.setVisible(true);		
+		setSize(900, 900);
 	}
 }
