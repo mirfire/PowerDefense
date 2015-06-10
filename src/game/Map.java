@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.Image;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,8 +12,9 @@ import org.json.simple.JSONValue;
 public class Map {
 	private String mapName;
 	private String backgroundPath;
+	private Image backgroundImage;
 	private int width;
-	private int height;
+		private int height;
 	private Case cases[][];
 	
 	public Map(String mapName, String backgroundPath, int width, int height) {
@@ -25,6 +27,54 @@ public class Map {
 	
 	public Map() {
 		readMap();
+	}
+	
+	public String getMapName() {
+		return mapName;
+	}
+
+	public void setMapName(String mapName) {
+		this.mapName = mapName;
+	}
+
+	public String getBackgroundPath() {
+		return backgroundPath;
+	}
+
+	public void setBackgroundPath(String backgroundPath) {
+		this.backgroundPath = backgroundPath;
+	}
+
+	public int getWidth() {
+		return width;
+	}
+
+	public void setWidth(int width) {
+		this.width = width;
+	}
+
+	public int getHeight() {
+		return height;
+	}
+
+	public void setHeight(int height) {
+		this.height = height;
+	}
+
+	public Case[][] getCases() {
+		return cases;
+	}
+
+	public void setCases(Case[][] cases) {
+		this.cases = cases;
+	}
+
+	public Image getBackgroundImage() {
+		return backgroundImage;
+	}
+
+	public void setBackgroundImage(Image backgroundImage) {
+		this.backgroundImage = backgroundImage;
 	}
 	
 	private void readMap() {
