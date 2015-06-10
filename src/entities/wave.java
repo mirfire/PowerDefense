@@ -1,8 +1,15 @@
 package entities;
 
 import java.util.ArrayList;
-import java.util.Timer;
+
+import entities.ennemies.Ennemy;
 
 public class wave {
-	ArrayList ennemies = new ArrayList();
+	ArrayList<Ennemy> ennemies = new ArrayList<Ennemy>();
+	ArrayList quantities = new ArrayList();
+	
+	public void addEnnemyToWave(Ennemy ennemy, int quantity){
+		ennemies.add(ennemy);
+		quantities.add(quantity);
+	}
 }

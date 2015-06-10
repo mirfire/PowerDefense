@@ -42,15 +42,15 @@ public class LoadGameMenu extends BaseMenu {
 		JLabel label = new JLabel("Nom de la Partie");
 		label.setHorizontalAlignment(SwingConstants.LEFT);
 		label.setFont(new Font("Calibri", Font.PLAIN, 14));
-		label.setBounds(94, 328, 165, 20);
+		label.setBounds(94, 279, 165, 20);
 		add(label);
 		
 		JTextPane textPane = new JTextPane();
-		textPane.setBounds(94, 347, 311, 20);
+		textPane.setBounds(94, 303, 311, 20);
 		add(textPane);
 		
-		JButton button = new JButton("Lancer Partie !");
-		button.setBounds(150, 378, 200, 50);
-		add(button);
+		JButton btnChargerPartie = new JButton("Charger Partie !");
+		btnChargerPartie.setBounds(150, 334, 200, 50);
+		add(btnChargerPartie);
 	}
 }

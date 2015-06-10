@@ -3,7 +3,8 @@ package menus;
 public enum Menus {
 	MAIN 		("MAIN"),
 	NEWGAME 	("NEW"),
-	LOADGAME	("LOAD");
+	LOADGAME	("LOAD"),
+	INGAME 	("IG");
 	
 	private String typeMenu;
 	
