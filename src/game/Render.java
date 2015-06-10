@@ -24,7 +24,7 @@ public class Render extends JPanel implements Runnable {
 		System.out.println("Moteur de rendu lancé");
 		long lastFrame = System.currentTimeMillis();
 		
-		// Boucle de l'interface
+		// Boucle du jeu
 		while(true) {
 			repaint();
 			lastFrame = countFPS(lastFrame);
