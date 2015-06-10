@@ -56,6 +56,7 @@ public class ReadData {
 				map.setHeight(results.getInt("height"));
 				map.setWidth(results.getInt("width"));
 				map.setSpawnPoint(readSpawnPointFromDB(mapID));
+				map.setWorkstation(readWorkstationFromDB(mapID));
 				return map;
 			}			
 		} catch (SQLException e) {			

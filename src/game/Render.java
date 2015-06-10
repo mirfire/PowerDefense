@@ -52,6 +52,7 @@ public class Render extends JPanel implements Runnable {
 		
 		// TODO : drawCase(g);
 		drawSpawnPoint(g);
+		drawWorkstation(g);
 		Grid(g);
 		
 		drawFPS(g);
@@ -73,6 +74,17 @@ public class Render extends JPanel implements Runnable {
 			int y = (this.game.map.getSpawnPoint().getCoords().getX() - 1) * 40 + 1;
 			int x = (this.game.map.getSpawnPoint().getCoords().getY() - 1) * 40 + 1;
 			g.drawImage(spawnPointImage, y, x, this);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	private void drawWorkstation(Graphics g) {
+		try {
+			Image workstationImage = ImageIO.read(new File("resources/sprites/workstation.png"));
+			int y = (this.game.map.getWorkstation().getCoords().getX() - 1) * 40 + 1;
+			int x = (this.game.map.getWorkstation().getCoords().getY() - 1) * 40 + 1;
+			g.drawImage(workstationImage, y, x, this);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
