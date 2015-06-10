@@ -13,7 +13,6 @@ public class Game {
 	private int survivedTime;	//a modifier
 	private int kills;
 	private boolean pause;
-	Game partie1 = new Game("partie une");
 	
 	public String getGameName() {
 		return gameName;
