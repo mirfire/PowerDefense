@@ -1,12 +1,9 @@
 package entities;
 
-import java.util.ArrayList;
 import java.util.Random;
 
-import entities.ennemies.Ennemy;
-
 public class wave {
-	
+
 	private int waveLvl = 0;
 	private int enemies = 0;
 	private boolean waveSpawning;
@@ -15,61 +12,59 @@ public class wave {
 	Random rand = new Random();
 	private int nombre = rand.nextInt(5 - 1 + 1) + 1;
 	private int nombrePetit = rand.nextInt(3 - 1 + 1) + 1;
-	
-	
-	public void nextWave(){
+
+	public void nextWave() {
 		this.waveLvl++;
 		this.enemies = 0;
 		this.waveSpawning = true;
-		System.out.println("Wave" + this.waveLvl + "incomming!");	
-		}
-	
-	public void spawnEnemies(){
-		if (waveLvl >= 3){
-			if (this.enemies < this.waveLvl * 10){
-				if (enemiesDelay < spawnRate){
+		System.out.println("Wave" + this.waveLvl + "incomming!");
+	}
+
+	public void spawnEnemies() {
+		if (waveLvl >= 3) {
+			if (this.enemies < this.waveLvl * 10) {
+				if (enemiesDelay < spawnRate) {
 					enemiesDelay++;
-				}else{
-				enemiesDelay = 0;
-				this.enemies++;
-				switch (this.nombre){
-					case 1 :	//faire spawn mob
+				} else {
+					enemiesDelay = 0;
+					this.enemies++;
+					switch (this.nombre) {
+					case 1: // faire spawn mob
 						break;
-					case 2 :
+					case 2:
 						break;
-					case 3 :
+					case 3:
 						break;
-					case 4 :
+					case 4:
 						break;
-					case 5 :
-						break;	
+					case 5:
+						break;
 					}
-				
+
 				}
-			}else{
+			} else {
 				this.waveSpawning = false;
 			}
-		}else{
-			if (this.enemies < this.waveLvl * 10){
-				if (enemiesDelay < spawnRate){
+		} else {
+			if (this.enemies < this.waveLvl * 10) {
+				if (enemiesDelay < spawnRate) {
 					enemiesDelay++;
-				}else{
-				enemiesDelay = 0;
-				System.out.println("Enemies Spawned");
-				this.enemies++;
-				switch (this.nombrePetit){
-					case 1 :	//faire spawn mob
+				} else {
+					enemiesDelay = 0;
+					System.out.println("Enemies Spawned");
+					this.enemies++;
+					switch (this.nombrePetit) {
+					case 1: // faire spawn mob
 						break;
-					case 2 :
+					case 2:
 						break;
-					case 3 :
+					case 3:
 						break;
 					}
-				
+
 				}
-			}else{
+			} else {
 				this.waveSpawning = false;
-			
 			}
 		}
 	}

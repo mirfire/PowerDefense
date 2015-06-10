@@ -41,11 +41,11 @@ public class NewGameMenu extends BaseMenu {
 		lblLogo.setLocation(10, 0);
 		panelLogo.add(lblLogo, BorderLayout.CENTER);
 		
-		JLabel lblNomDeLa = new JLabel("Nom de la Partie");
-		lblNomDeLa.setHorizontalAlignment(SwingConstants.LEFT);
-		lblNomDeLa.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblNomDeLa.setBounds(94, 326, 165, 20);
-		add(lblNomDeLa);
+		JLabel lblGameName = new JLabel("Nom de la Partie");
+		lblGameName.setHorizontalAlignment(SwingConstants.LEFT);
+		lblGameName.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblGameName.setBounds(94, 326, 165, 20);
+		add(lblGameName);
 		
 		JButton btnLaunchNewGame = new JButton("Lancer Partie !");
 		btnLaunchNewGame.addActionListener(new ActionListener() {

@@ -1,20 +1,18 @@
 package game;
 
 import java.awt.Graphics;
-import Database.Save;
+import database.Save;
 import entities.*;
 import javax.swing.JPanel;
 
 public class Game {
 	private String gameName;
-	//Map map = new Map();
 	private int ressources;
 	Map map = new Map();
 	private int score;
 	private int survivedTime;	//a modifier
 	private int kills;
 	private boolean pause;
-	Game partie1 = new Game("partie une");
 	
 	public String getGameName() {
 		return gameName;
