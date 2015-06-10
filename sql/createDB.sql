@@ -1,5 +1,5 @@
 -- --------------------------------------------------------
--- HÙte :                        127.0.0.1
+-- H√¥te :                        127.0.0.1
 -- Version du serveur:           5.6.17 - MySQL Community Server (GPL)
 -- SE du serveur:                Win64
 -- HeidiSQL Version:             9.2.0.4947
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `maps` (
   PRIMARY KEY (`mapID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 
--- Export de donnÈes de la table projet_java.maps : ~1 rows (environ)
+-- Export de donn√©es de la table projet_java.maps : ~0 rows (environ)
 /*!40000 ALTER TABLE `maps` DISABLE KEYS */;
 INSERT INTO `maps` (`mapID`, `mapName`, `backgroundPath`, `width`, `height`) VALUES
 	(1, 'Carte 1', 'resources/maps/niveau_1.jpeg', 15, 15);
@@ -41,11 +41,27 @@ CREATE TABLE IF NOT EXISTS `spawnpoint` (
   CONSTRAINT `FK_mapID` FOREIGN KEY (`mapID`) REFERENCES `maps` (`mapID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Export de donnÈes de la table projet_java.spawnpoint : ~1 rows (environ)
+-- Export de donn√©es de la table projet_java.spawnpoint : ~0 rows (environ)
 /*!40000 ALTER TABLE `spawnpoint` DISABLE KEYS */;
 INSERT INTO `spawnpoint` (`mapID`, `x`, `y`) VALUES
-	(1, 1, 3);
+	(1, 1, 2);
 /*!40000 ALTER TABLE `spawnpoint` ENABLE KEYS */;
+
+
+-- Export de la structure de table projet_java. workstation
+CREATE TABLE IF NOT EXISTS `workstation` (
+  `mapID` int(11) NOT NULL,
+  `x` tinyint(4) DEFAULT NULL,
+  `y` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`mapID`),
+  CONSTRAINT `workstation_ibfk_1` FOREIGN KEY (`mapID`) REFERENCES `maps` (`mapID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
+
+-- Export de donn√©es de la table projet_java.workstation : ~1 rows (environ)
+/*!40000 ALTER TABLE `workstation` DISABLE KEYS */;
+INSERT INTO `workstation` (`mapID`, `x`, `y`) VALUES
+	(1, 14, 15);
+/*!40000 ALTER TABLE `workstation` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
