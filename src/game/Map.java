@@ -22,11 +22,11 @@ public final class Map {
 	private Case cases[][];
 	private SpawnPoint spawnPoint;
 	
-	public Map(String mapName, String backgroundPath, int width, int height) {
+	public Map(String mapName, String backgroundPath) {
 		this.mapName = mapName;
 		this.backgroundPath = backgroundPath;
-		this.width = width;
-		this.height = height;
+		this.width = 15;
+		this.height = 15;
 		this.spawnPoint = new SpawnPoint(1,1);
 	}
 	
@@ -113,8 +113,8 @@ public final class Map {
 			JSONObject  readData = (JSONObject )obj;
 			this.mapName = (String) readData.get("mapName");
 			this.backgroundPath = (String) readData.get("backgroundPath");
-			this.width = (long) readData.get("width");
-			this.height = (long) readData.get("height");
+			this.width = 15;
+			this.height = 15;
 			this.cases = new Case[(int) height][(int) width];
 			JSONArray SpawnPoint = (JSONArray) readData.get("spawnPoint");
 			this.spawnPoint = new SpawnPoint((int) (long) SpawnPoint.get(0), (int) (long) SpawnPoint.get(1));
@@ -122,5 +122,9 @@ public final class Map {
 		catch (Exception e) {
 	        e.printStackTrace();
 	    }
+	}
+	
+	private void readMapFromDB() {
+		
 	}
 }
