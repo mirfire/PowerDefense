@@ -6,6 +6,10 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class Window extends JFrame {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 5409287454413733912L;
 	private MenusContainer menusContainer;
 	private MainMenu mainMenu;
 	private NewGameMenu newGameMenu;

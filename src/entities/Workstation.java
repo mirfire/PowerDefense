@@ -1,10 +1,5 @@
 package entities;
 
-import game.Game;
-
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class Workstation {
 	public static Workstation workstation = new Workstation();
 	private int maxHp = 100;

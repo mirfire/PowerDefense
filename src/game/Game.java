@@ -1,8 +1,5 @@
 package game;
 
-import java.awt.Graphics;
-import database.Save;
-import entities.*;
 import javax.swing.JPanel;
 
 public class Game {

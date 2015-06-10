@@ -4,13 +4,11 @@ import game.Render;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.Graphics;
-import java.awt.Panel;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
-import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
@@ -20,9 +18,12 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
-import java.awt.event.MouseAdapter;
 
 public class InGameMenu extends BaseMenu {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -8351826923333261445L;
 	static Render panelGame;
 	static JPanel panelMenuGame;
 	static JPanel panelToolBar;

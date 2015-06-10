@@ -9,6 +9,10 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 public class Render extends JPanel implements Runnable {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7990237525170526056L;
 	Thread menuThread =  new Thread(this);
 	Game game;
 	Map map;

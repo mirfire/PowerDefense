@@ -14,6 +14,11 @@ import javax.swing.SwingConstants;
 
 public class NewGameMenu extends BaseMenu {
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -3611441847895404790L;
+
 	public NewGameMenu() {
 		setLayout(null);
 		
