@@ -124,6 +124,14 @@ public class Map {
 		this.spawnPoint = spawnPoint;
 	}
 
+	public Workstation getWorkstation() {
+		return workstation;
+	}
+
+	public void setWorkstation(Workstation workstation) {
+		this.workstation = workstation;
+	}
+
 	private void readMapFromFile() {
 		String data = "", currentLine;
 		try {
