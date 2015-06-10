@@ -1,5 +1,9 @@
 package entities.towers;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import entities.Unit;
+import game.Game;
 
 
 
@@ -7,7 +11,7 @@ import entities.Unit;
 public class Tower extends Unit  {
 	
 	protected int dmg;
-	protected int  cost;
+	protected int cost;
 	protected int range;
 	protected int cooldown;
 	protected DamagesTypes dmgType;
@@ -26,4 +30,13 @@ public class Tower extends Unit  {
 		this.HP = 0;	
 	
 }
+/*	public void upgradeTower (Tower tower){
+		btnUpgrade.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				if (Game.getRessources() >= tower.cost*2){
+					
+				}
+			}
+		});*/
+	}
 }
