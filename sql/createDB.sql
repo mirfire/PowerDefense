@@ -28,7 +28,7 @@ CREATE TABLE IF NOT EXISTS `maps` (
 -- Export de données de la table projet_java.maps : ~1 rows (environ)
 /*!40000 ALTER TABLE `maps` DISABLE KEYS */;
 INSERT INTO `maps` (`mapID`, `mapName`, `backgroundPath`, `width`, `height`) VALUES
-	(1, 'Carte 1', 'resources/maps/map_01.png', 15, 15);
+	(1, 'Carte 1', 'resources/maps/niveau_1.jpeg', 15, 15);
 /*!40000 ALTER TABLE `maps` ENABLE KEYS */;
 
 
