@@ -1,19 +1,21 @@
 package game;
 
+
 public class Game {
+	Game game = new Game();
 	private String gameName;
 	//Map map = new Map();
-	private static int ressources;
+	private int ressources;
 	private int score;
 	private int survivedTime;	//a modifier
 	private int kills;
 	private boolean pause;
 	
-	public static int getRessources() {
+	public int getRessources() {
 		return ressources;
 	}
 
-	public static void setRessources(int i) {
+	public void setRessources(int i) {
 		i = ressources;
 	}
 
