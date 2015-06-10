@@ -49,6 +49,10 @@ public class Render extends JPanel implements Runnable {
 		
 	}
 	
+	private void drawCase(Case cases[][]) {
+		
+	}
+	
 	private void Grid(Graphics g){		
         int larg = getWidth(); 
         int haut = getHeight();     
