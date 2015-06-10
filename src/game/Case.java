@@ -11,7 +11,7 @@ public class Case {
 		this.buildable = true;
 		this.spritePath = spritePath;
 	}
-
+	
 	public Coords getCoords() {
 		return coords;
 	}
