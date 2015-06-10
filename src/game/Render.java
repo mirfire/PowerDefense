@@ -63,7 +63,6 @@ public class Render extends JPanel implements Runnable {
         {
            g.drawLine(i,0,i, haut); // Les lignes verticales de la grille
            g.drawLine(0,i,larg, i); // Les lignes horizontales de la grille
-           System.out.println(i);
         }
         
 	}
