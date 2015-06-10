@@ -34,9 +34,11 @@ public class Workstation {
 		btnRepair.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (life <= 8 && Game.getRessources() >= 20){
-					Game.setRessources(Game.getRessources() - 20);
+					game.setRessources(Game.getRessources() - 20);
 					workstation.life = life + 5;
 				}
+				else{
+				return 0;
 			}
 		});
 		return;

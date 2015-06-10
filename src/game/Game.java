@@ -6,8 +6,9 @@ import javax.swing.JPanel;
 
 public class Game {
 	private String gameName;
+	//Map map = new Map();
+	private int ressources;
 	Map map = new Map();
-	private static int ressources;
 	private int score;
 	private int survivedTime;	//a modifier
 	private int kills;
@@ -22,11 +23,11 @@ public class Game {
 		this.pause = false;
 	}
 	
-	public static int getRessources() {
+	public int getRessources() {
 		return ressources;
 	}
 
-	public static void setRessources(int i) {
+	public void setRessources(int i) {
 		i = ressources;
 	}
 
