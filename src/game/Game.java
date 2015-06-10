@@ -6,7 +6,6 @@ import javax.swing.JPanel;
 
 public class Game {
 	private String gameName;
-	//Map map = new Map();
 	private int ressources;
 	Map map = new Map();
 	private int score;

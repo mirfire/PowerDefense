@@ -2,9 +2,12 @@ package game;
 
 import java.awt.Image;
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
+
+import javax.imageio.ImageIO;
 
 import org.json.simple.JSONObject;
 import org.json.simple.JSONValue;
@@ -13,8 +16,8 @@ public final class Map {
 	private String mapName;
 	private String backgroundPath;
 	private Image backgroundImage;
-	private int width;
-		private int height;
+	private long width;
+	private long height;
 	private Case cases[][];
 	
 	public Map(String mapName, String backgroundPath, int width, int height) {
@@ -27,6 +30,11 @@ public final class Map {
 	
 	public Map() {
 		readMap();
+		try {
+			this.backgroundImage = ImageIO.read(new File(this.backgroundPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 	
 	public String getMapName() {
@@ -45,19 +53,19 @@ public final class Map {
 		this.backgroundPath = backgroundPath;
 	}
 
-	public int getWidth() {
+	public long getWidth() {
 		return width;
 	}
 
-	public void setWidth(int width) {
+	public void setWidth(long width) {
 		this.width = width;
 	}
 
-	public int getHeight() {
+	public long getHeight() {
 		return height;
 	}
 
-	public void setHeight(int height) {
+	public void setHeight(long height) {
 		this.height = height;
 	}
 
@@ -78,7 +86,7 @@ public final class Map {
 	}
 	
 	private void readMap() {
-		String data = null, currentLine;
+		String data = "", currentLine;
 		try {
 			BufferedReader br = new BufferedReader(new FileReader("map_01.json"));
 			try {
@@ -95,9 +103,9 @@ public final class Map {
 			JSONObject  readData = (JSONObject )obj;
 			this.mapName = (String) readData.get("mapName");
 			this.backgroundPath = (String) readData.get("backgroundPath");
-			this.width = (int) readData.get("width");
-			this.height = (int) readData.get("height");
-			this.cases = new Case[height][width];
+			this.width = (long) readData.get("width");
+			this.height = (long) readData.get("height");
+			this.cases = new Case[(int) height][(int) width];
 		} 
 		catch (Exception e) {
 	        e.printStackTrace();
