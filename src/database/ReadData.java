@@ -1,5 +1,6 @@
 package database;
 
+import entities.Workstation;
 import game.Config;
 import game.Map;
 import game.SpawnPoint;
@@ -72,6 +73,22 @@ public class ReadData {
 				spawnPoint.getCoords().setX(results.getInt("x"));
 				spawnPoint.getCoords().setY(results.getInt("y"));
 				return spawnPoint;
+			}			
+		} catch (SQLException e) {			
+			e.printStackTrace();
+		}	
+		return null;
+	}
+	
+	public Workstation readWorkstationFromDB(int mapID) {
+		Workstation workstation = new Workstation();
+		this.sqlQuery = "SELECT * FROM workstation WHERE `mapID`=" + mapID + ";";
+		try {
+			results = statement.executeQuery(sqlQuery);
+			if(results.next()) {
+				workstation.getCoords().setX(results.getInt("x"));
+				workstation.getCoords().setY(results.getInt("y"));
+				return workstation;
 			}			
 		} catch (SQLException e) {			
 			e.printStackTrace();
