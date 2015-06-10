@@ -87,6 +87,14 @@ public final class Map {
 		this.backgroundImage = backgroundImage;
 	}
 	
+	public void seekBackgroundImage(String backgroundPath) {
+		try {
+			this.backgroundImage = ImageIO.read(new File(backgroundPath));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	}
+	
 	public SpawnPoint getSpawnPoint() {
 		return spawnPoint;
 	}
