@@ -1,7 +1,10 @@
 package menus;
 
+import game.Render;
+
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.Panel;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 
@@ -14,10 +17,11 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
+import javax.swing.SwingUtilities;
 
 
 public class InGameMenu extends BaseMenu {
-	public static JPanel panelGame;
+	static Render panelGame;
 	static JPanel panelMenuGame;
 	static JPanel panelToolBar;
 	static JLabel lblMapname;
@@ -32,7 +36,7 @@ public class InGameMenu extends BaseMenu {
 		
 		setLayout(null);
 		
-		panelGame = new JPanel();
+		panelGame = new Render(this);
 		panelGame.setLayout(null);
 		panelGame.setBounds(10, 32, 600, 600);
 		add(panelGame);
@@ -82,7 +86,7 @@ public class InGameMenu extends BaseMenu {
 		return panelGame;
 	}
 
-	public void setPanelGame(JPanel panelGame) {
+	public void setPanelGame(Render panelGame) {
 		InGameMenu.panelGame = panelGame;
 	}
 
