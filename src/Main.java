@@ -16,7 +16,10 @@ public class Main {
 		}
 		try {
 			Window frame = new Window();
+			frame.setTitle("PowerDefense");
+			frame.setLocationRelativeTo(null);
 			frame.setVisible(true);
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
