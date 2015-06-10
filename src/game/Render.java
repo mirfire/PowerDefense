@@ -24,7 +24,7 @@ public class Render extends JPanel implements Runnable {
 		System.out.println("Moteur de rendu lancé");
 		long lastFrame = System.currentTimeMillis();
 		
-		// Boucle de l'interface
+		// Boucle du jeu
 		while(true) {
 			repaint();
 			lastFrame = countFPS(lastFrame);
@@ -49,20 +49,17 @@ public class Render extends JPanel implements Runnable {
 		
 	}
 	
-	private void Grid(Graphics g){
+	private void drawCase(Case cases[][]) {
 		
-		
+	}
+	
+	private void Grid(Graphics g){		
         int larg = getWidth(); 
-        int haut = getHeight();
-        
-     
-        int dim = 40; 
-        
-        
-        for(int i = 0; i < larg; i +=dim)
-        {
-           g.drawLine(i,0,i, haut); // Les lignes verticales de la grille
-           g.drawLine(0,i,larg, i); // Les lignes horizontales de la grille
+        int haut = getHeight();     
+        int dim = 40;        
+        for(int i = 0; i < larg; i +=dim) {
+        	g.drawLine(i,0,i, haut); // Les lignes verticales de la grille
+        	g.drawLine(0,i,larg, i); // Les lignes horizontales de la grille
         }
         
 	}
