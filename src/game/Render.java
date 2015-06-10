@@ -42,9 +42,31 @@ public class Render extends JPanel implements Runnable {
 		
 		drawBackgroundImage(g);
 		
+		
+		Grid(g);
+		
 		drawFPS(g);
+		
 	}
 	
+	private void Grid(Graphics g){
+		
+		
+        int larg = getWidth(); 
+        int haut = getHeight();
+        
+     
+        int dim = 40; 
+        
+        
+        for(int i = 0; i < larg; i +=dim)
+        {
+           g.drawLine(i,0,i, haut); // Les lignes verticales de la grille
+           g.drawLine(0,i,larg, i); // Les lignes horizontales de la grille
+           System.out.println(i);
+        }
+        
+	}
 	private void clearGameScreen(Graphics g) {
 		g.clearRect(0, 0, this.parentPanel.getWidth(), this.parentPanel.getHeight());
 	}
