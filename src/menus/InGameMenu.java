@@ -24,7 +24,7 @@ public class InGameMenu extends BaseMenu {
 		
 		JPanel panelGame = new JPanel();
 		panelGame.addAncestorListener(new AncestorListener() {
-			public void ancestorAdded(AncestorEvent arg0) {		
+			public void ancestorAdded(AncestorEvent arg0) {
 			}
 			public void ancestorMoved(AncestorEvent arg0) {
 			}
