@@ -87,6 +87,14 @@ public final class Map {
 		this.backgroundImage = backgroundImage;
 	}
 	
+	public SpawnPoint getSpawnPoint() {
+		return spawnPoint;
+	}
+
+	public void setSpawnPoint(SpawnPoint spawnPoint) {
+		this.spawnPoint = spawnPoint;
+	}
+
 	private void readMap() {
 		String data = "", currentLine;
 		try {
