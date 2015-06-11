@@ -84,8 +84,7 @@ public class ReadData {
 
 	public Workstation readWorkstationFromDB(int mapID) {
 		Workstation workstation = new Workstation();
-		this.sqlQuery = "SELECT * FROM workstation WHERE `mapID`=" + mapID
-				+ ";";
+		this.sqlQuery = "SELECT * FROM workstation WHERE `mapID`=" + mapID + ";";
 		try {
 			results = statement.executeQuery(sqlQuery);
 			if (results.next()) {

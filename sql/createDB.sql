@@ -1,7 +1,7 @@
 -- --------------------------------------------------------
 -- Hôte :                        127.0.0.1
 -- Version du serveur:           5.6.17 - MySQL Community Server (GPL)
--- SE du serveur:                Win32
+-- SE du serveur:                Win64
 -- HeidiSQL Version:             9.2.0.4947
 -- --------------------------------------------------------
 
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS `maps` (
   PRIMARY KEY (`mapID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Export de données de la table projet_java.maps : ~0 rows (environ)
+-- Export de données de la table projet_java.maps : ~4 rows (environ)
 /*!40000 ALTER TABLE `maps` DISABLE KEYS */;
 INSERT INTO `maps` (`mapID`, `mapName`, `backgroundPath`, `width`, `height`) VALUES
 	(1, 'Carte 1', 'resources/maps/niveau_1.jpeg', 15, 15),
@@ -33,6 +33,24 @@ INSERT INTO `maps` (`mapID`, `mapName`, `backgroundPath`, `width`, `height`) VAL
 	(3, 'Carte 3', 'resources/maps/niveau_1.jpeg', 15, 15),
 	(4, 'Carte 4', 'resources/maps/niveau_1.jpeg', 15, 15);
 /*!40000 ALTER TABLE `maps` ENABLE KEYS */;
+
+
+-- Export de la structure de table projet_java. saved_games
+CREATE TABLE IF NOT EXISTS `saved_games` (
+  `gameID` int(11) NOT NULL AUTO_INCREMENT,
+  `gameName` tinytext NOT NULL,
+  `mapID` int(11) NOT NULL,
+  `score` int(11) NOT NULL,
+  `survivedTime` int(11) NOT NULL,
+  `kills` int(11) NOT NULL,
+  PRIMARY KEY (`gameID`),
+  KEY `FK_saved_games_mapID` (`mapID`),
+  CONSTRAINT `FK_saved_games_mapID` FOREIGN KEY (`mapID`) REFERENCES `maps` (`mapID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- Export de données de la table projet_java.saved_games : ~0 rows (environ)
+/*!40000 ALTER TABLE `saved_games` DISABLE KEYS */;
+/*!40000 ALTER TABLE `saved_games` ENABLE KEYS */;
 
 
 -- Export de la structure de table projet_java. spawnpoint
@@ -44,7 +62,7 @@ CREATE TABLE IF NOT EXISTS `spawnpoint` (
   CONSTRAINT `FK_mapID` FOREIGN KEY (`mapID`) REFERENCES `maps` (`mapID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
--- Export de données de la table projet_java.spawnpoint : ~0 rows (environ)
+-- Export de données de la table projet_java.spawnpoint : ~4 rows (environ)
 /*!40000 ALTER TABLE `spawnpoint` DISABLE KEYS */;
 INSERT INTO `spawnpoint` (`mapID`, `x`, `y`) VALUES
 	(1, 1, 2),
@@ -63,7 +81,7 @@ CREATE TABLE IF NOT EXISTS `workstation` (
   CONSTRAINT `workstation_ibfk_1` FOREIGN KEY (`mapID`) REFERENCES `maps` (`mapID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 ROW_FORMAT=COMPACT;
 
--- Export de données de la table projet_java.workstation : ~0 rows (environ)
+-- Export de données de la table projet_java.workstation : ~4 rows (environ)
 /*!40000 ALTER TABLE `workstation` DISABLE KEYS */;
 INSERT INTO `workstation` (`mapID`, `x`, `y`) VALUES
 	(1, 14, 15),

@@ -18,6 +18,7 @@ import entities.Workstation;
 
 public class Map {
 	private String mapName;
+	private int mapID;
 	private String backgroundPath;
 	private Image backgroundImage;
 	private long width;
