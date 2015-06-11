@@ -57,6 +57,7 @@ public class NewGameMenu extends BaseMenu {
 		btnLaunchNewGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(checkGameName() == true) {
+					
 					showInGameMenu();
 					windowSetGameMode();
 				}

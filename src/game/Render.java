@@ -1,6 +1,9 @@
 package game;
 
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
 import java.io.File;
 import java.io.IOException;
@@ -63,8 +66,9 @@ public class Render extends JPanel implements Runnable {
 		drawWorkstation(g);
 		Grid(g);
 		
-		drawFPS(g);
-		
+		if(checkPause())
+			drawPause(g);
+		drawFPS(g);		
 	}
 	
 	private void drawCase(Graphics g) {
@@ -113,7 +117,19 @@ public class Render extends JPanel implements Runnable {
 	}
 	
 	private void drawFPS(Graphics g) {
+		g.setFont(new Font("Consolas", Font.PLAIN, 13));
+		g.setColor(Color.BLACK);
 		g.drawString(FPS + "FPS", 1, 10);
+	}
+	
+	private void drawPause(Graphics g) {
+		String s = "PAUSE";
+		Graphics2D g2 = (Graphics2D) g;
+		g2.setColor(Color.RED);
+		g2.setFont(new Font("Calibri", Font.BOLD, 64));
+		int stringLen = (int) g2.getFontMetrics().getStringBounds(s, g2).getWidth();
+		int start = this.getWidth()/2 - stringLen/2;
+		g2.drawString(s, start + 1, 300);
 	}
 	
 	private void drawBackgroundImage(Graphics g) {
@@ -127,7 +143,14 @@ public class Render extends JPanel implements Runnable {
 			this.frames = 0;
 			lastFrame = System.currentTimeMillis();
 		}
-		return lastFrame;
+		return lastFrame;		
+	}
+	
+	public boolean checkPause() {
+		this.game.setPause(InGameMenu.chckbxmntmPause.getState());
 		
+		if(this.game.isPause() == true)
+			return true;
+		return false;
 	}
 }
