@@ -26,9 +26,6 @@ import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
-
 public class InGameMenu extends BaseMenu {
 	private static final long serialVersionUID = -8351826923333261445L;
 	public static Render panelGame;
@@ -99,11 +96,6 @@ public class InGameMenu extends BaseMenu {
 		mnGame.add(separator);
 		
 		mntmLeaveGame = new JMenuItem("Quitter");
-		mntmLeaveGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				showConfirmExitGameDialog();
-			}
-		});
 		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
 		mnGame.add(mntmLeaveGame);
 		
@@ -197,4 +189,5 @@ public class InGameMenu extends BaseMenu {
 	   		System.out.println("Impossible");
 	   	}
 	}
+	
 }
