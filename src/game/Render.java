@@ -12,11 +12,9 @@ import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
 import menus.InGameMenu;
+import menus.NewGameMenu;
 
-public class Render extends JPanel implements Runnable {	
-	/**
-	 * 
-	 */
+public class Render extends JPanel implements Runnable {
 	private static final long serialVersionUID = 7990237525170526056L;
 	Thread gameThread =  new Thread(this);
 	Game game;
@@ -29,7 +27,6 @@ public class Render extends JPanel implements Runnable {
 	public Render(JPanel panel) { 
 		gameThread.start();
 		this.parentPanel = panel;
-		game = new Game("GameTest");
 	}
 
 	public void run() {
@@ -147,8 +144,7 @@ public class Render extends JPanel implements Runnable {
 	}
 	
 	public boolean checkPause() {
-		this.game.setPause(InGameMenu.chckbxmntmPause.getState());
-		
+		this.game.setPause(InGameMenu.chckbxmntmPause.getState());		
 		if(this.game.isPause() == true)
 			return true;
 		return false;
