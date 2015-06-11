@@ -186,15 +186,17 @@ public class InGameMenu extends BaseMenu {
 		int x = (coords.getX() - 1) * Config.GAME_CELLSIZE;
 		int y = (coords.getY() - 1) * Config.GAME_CELLSIZE; 
 	   	int[][] Chemin = Niveau1.Chemin1();
-	   	if (Chemin[(x/40)][(y/40)]==0){   		
-			JLabel label = new JLabel();  
-        	label.setIcon(new ImageIcon("resources/t.jpg"));
-        	panelGame.add(label);
-        	Dimension size = label.getPreferredSize();
-        	label.setBounds(y, x, size.width, size.height);
-        }
-	   	else {
-	   		showErrorMessage("Impossible de placer une tour sur le chemin");
-	   	}
+	   	if (this.panelGame.getGame().isPause() == false) {
+	   		if (Chemin[(x/40)][(y/40)] == 0){   		
+				JLabel label = new JLabel();  
+	        	label.setIcon(new ImageIcon("resources/t.jpg"));
+	        	panelGame.add(label);
+	        	Dimension size = label.getPreferredSize();
+	        	label.setBounds(y, x, size.width, size.height);
+	        }
+		   	else {
+		   		showErrorMessage("Impossible de placer une tour sur le chemin");
+		   	}
+	   	}	   	
 	}
 }
