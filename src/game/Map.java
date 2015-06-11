@@ -67,6 +67,14 @@ public class Map {
 		this.mapName = mapName;
 	}
 
+	public int getMapID() {
+		return mapID;
+	}
+
+	public void setMapID(int mapID) {
+		this.mapID = mapID;
+	}
+
 	public String getBackgroundPath() {
 		return backgroundPath;
 	}
