@@ -40,11 +40,15 @@ public class NewGameMenu extends BaseMenu {
 		add(btnBackToMainMenu);
 		
 		panelLogo = new JPanel();
-		panelLogo.setBounds(10, 11, 480, 200);
+		panelLogo.setBounds(10, 10, 480, 200);
 		add(panelLogo);
 		panelLogo.setLayout(new BorderLayout(0, 0));
 		
 		ImageIcon logo = new ImageIcon("resources/logo.png");
+		lblLogo = new JLabel("", logo, JLabel.CENTER);
+		lblLogo.setSize(480, 50);
+		lblLogo.setLocation(10, 0);
+		panelLogo.add(lblLogo, BorderLayout.CENTER);
 		
 		lblGameName = new JLabel("Nom de la Partie");
 		lblGameName.setHorizontalAlignment(SwingConstants.LEFT);
@@ -84,10 +88,6 @@ public class NewGameMenu extends BaseMenu {
 		JRadioButton radioMap4 = new JRadioButton("Carte 4");
 		radioMap4.setBounds(375, 296, 109, 23);
 		add(radioMap4);
-		lblLogo = new JLabel("", logo, JLabel.CENTER);
-		add(lblLogo);
-		lblLogo.setSize(480, 200);
-		lblLogo.setLocation(10, 11);
 	}
 	
 	public Game createGame(String gameName) {

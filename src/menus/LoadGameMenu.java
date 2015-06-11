@@ -13,11 +13,6 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 
 public class LoadGameMenu extends BaseMenu {
-	
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = 6607761919422010142L;
 
 	public LoadGameMenu() {
@@ -33,28 +28,28 @@ public class LoadGameMenu extends BaseMenu {
 		add(btnBackToMainMenu);
 		
 		JPanel panelLogo = new JPanel();
-		panelLogo.setBounds(10, 11, 480, 200);
+		panelLogo.setBounds(10, 10, 480, 200);
 		add(panelLogo);
 		panelLogo.setLayout(new BorderLayout(0, 0));
 		
 		ImageIcon logo = new ImageIcon("resources/logo.png");
+		JLabel lblLogo = new JLabel("", logo, JLabel.CENTER);
+		lblLogo.setSize(480, 50);
+		lblLogo.setLocation(10, 0);
+		panelLogo.add(lblLogo, BorderLayout.CENTER);
 		
 		JLabel label = new JLabel("Nom de la Partie");
 		label.setHorizontalAlignment(SwingConstants.LEFT);
 		label.setFont(new Font("Calibri", Font.PLAIN, 14));
-		label.setBounds(94, 279, 165, 20);
+		label.setBounds(94, 326, 165, 20);
 		add(label);
 		
 		JTextPane textPane = new JTextPane();
-		textPane.setBounds(94, 303, 311, 20);
+		textPane.setBounds(94, 347, 311, 20);
 		add(textPane);
 		
 		JButton btnChargerPartie = new JButton("Charger Partie !");
-		btnChargerPartie.setBounds(150, 334, 200, 50);
+		btnChargerPartie.setBounds(150, 378, 200, 50);
 		add(btnChargerPartie);
-		JLabel lblLogo = new JLabel("", logo, JLabel.CENTER);
-		add(lblLogo);
-		lblLogo.setSize(480, 200);
-		lblLogo.setLocation(10, 11);
 	}
 }

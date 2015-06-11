@@ -55,14 +55,14 @@ public class MainMenu extends BaseMenu {
 		add(btnExitGame);
 		
 		JPanel panelLogo = new JPanel();
-		panelLogo.setBounds(10, 11, 480, 200);
+		panelLogo.setBounds(10, 10, 480, 200);
 		add(panelLogo);
 		panelLogo.setLayout(new BorderLayout(0, 0));
 		
 		ImageIcon logo = new ImageIcon("resources/logo.png");
 		JLabel lblLogo = new JLabel("", logo, JLabel.CENTER);
-		add(lblLogo);
-		lblLogo.setSize(480, 200);
-		lblLogo.setLocation(10, 11);
+		lblLogo.setSize(480, 50);
+		lblLogo.setLocation(10, 0);
+		panelLogo.add(lblLogo, BorderLayout.CENTER);
 	}
 }
