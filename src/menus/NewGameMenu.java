@@ -1,5 +1,7 @@
 package menus;
 
+import game.Game;
+
 import java.awt.BorderLayout;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
@@ -18,7 +20,7 @@ public class NewGameMenu extends BaseMenu {
 	private JPanel panelLogo;
 	private JLabel lblLogo, lblGameName;
 	private JButton btnLaunchNewGame, btnBackToMainMenu;
-	private JTextPane txtNewGameName;
+	public static JTextPane txtNewGameName;
 	
 	public NewGameMenu() {
 		setLayout(null);
@@ -57,7 +59,8 @@ public class NewGameMenu extends BaseMenu {
 		btnLaunchNewGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(checkGameName() == true) {
-					
+					InGameMenu.panelGame.setGame(createGame(txtNewGameName.getText()));
+					loadInterface();
 					showInGameMenu();
 					windowSetGameMode();
 				}
@@ -70,8 +73,19 @@ public class NewGameMenu extends BaseMenu {
 		add(btnLaunchNewGame);
 	}
 	
+	public Game createGame(String gameName) {
+		Game game = new Game(gameName);		
+		return game;
+	}
+	
+	public void loadInterface() {
+		InGameMenu.lblGameName.setText(InGameMenu.panelGame.getGame().getGameName());
+		InGameMenu.lblMapName.setText(InGameMenu.panelGame.getGame().getMap().getMapName());
+		InGameMenu.lblResources.setText("" + InGameMenu.panelGame.getGame().getRessources());
+	}
+	
 	public boolean checkGameName() {
-		String enteredText = this.txtNewGameName.getText();
+		String enteredText = txtNewGameName.getText();
 		
 		if(enteredText == null)
 			return false;

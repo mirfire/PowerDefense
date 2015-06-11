@@ -34,7 +34,7 @@ public class InGameMenu extends BaseMenu {
 	public static Render panelGame;
 	public static JPanel panelMenuGame;
 	public static JPanel panelToolBar;
-	public static JLabel lblMapname, lblResources;
+	public static JLabel lblGameName, lblMapName, lblResources;
 	public static JMenuBar menuBar;
 	public static JMenu mnGame;
 	public static JMenuItem mntmLeaveGame, mntmSauvegarder;
@@ -68,16 +68,22 @@ public class InGameMenu extends BaseMenu {
 		panelToolBar.setBounds(620, 32, 270, 600);
 		add(panelToolBar);
 		
-		lblMapname = new JLabel(panelGame.getGame().getMap().getMapName());
-		lblMapname.setFont(new Font("Calibri", Font.PLAIN, 18));
-		lblMapname.setHorizontalAlignment(SwingConstants.CENTER);
-		lblMapname.setBounds(10, 10, 250, 30);
-		panelToolBar.add(lblMapname);
+		lblGameName = new JLabel("GameName");
+		lblGameName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblGameName.setFont(new Font("Calibri", Font.BOLD, 25));
+		lblGameName.setBounds(10, 11, 250, 30);
+		panelToolBar.add(lblGameName);
 		
-		lblResources = new JLabel("" + panelGame.getGame().getRessources());
+		lblMapName = new JLabel("MapName");
+		lblMapName.setFont(new Font("Calibri", Font.PLAIN, 18));
+		lblMapName.setHorizontalAlignment(SwingConstants.CENTER);
+		lblMapName.setBounds(10, 39, 250, 23);
+		panelToolBar.add(lblMapName);
+		
+		lblResources = new JLabel("Resources");
 		lblResources.setIcon(new ImageIcon("resources/interface/scrap_metal.png"));
 		lblResources.setFont(new Font("Calibri", Font.PLAIN, 14));
-		lblResources.setBounds(10, 51, 250, 36);
+		lblResources.setBounds(10, 69, 250, 36);
 		panelToolBar.add(lblResources);
 		
 		menuBar = new JMenuBar();
@@ -135,11 +141,11 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public JLabel getLblMapname() {
-		return lblMapname;
+		return lblMapName;
 	}
 
 	public void setLblMapname(JLabel lblMapname) {
-		InGameMenu.lblMapname = lblMapname;
+		InGameMenu.lblMapName = lblMapname;
 	}
 
 	public JMenuBar getMenuBar() {
