@@ -59,9 +59,9 @@ public class Game {
 		this.pause = pause;
 	}
 
-	public Game(String gameName) {
+	public Game(String gameName, Map map) {
 		this.ressources = 300;
-		this.map = Map.readMapFromDB(1);
+		this.map = map;
 		this.setGameName(gameName);
 		this.score = 0;
 		this.survivedTime = 0;
