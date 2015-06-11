@@ -8,12 +8,14 @@ import java.io.IOException;
 import javax.imageio.ImageIO;
 import javax.swing.JPanel;
 
+import menus.InGameMenu;
+
 public class Render extends JPanel implements Runnable {	
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 7990237525170526056L;
-	Thread menuThread =  new Thread(this);
+	Thread gameThread =  new Thread(this);
 	Game game;
 	JPanel parentPanel;	
 	
@@ -22,7 +24,7 @@ public class Render extends JPanel implements Runnable {
 	int frames = 0;
 	
 	public Render(JPanel panel) { 
-		menuThread.start();
+		gameThread.start();
 		this.parentPanel = panel;
 		game = new Game("GameTest");
 	}
@@ -34,8 +36,7 @@ public class Render extends JPanel implements Runnable {
 		// Boucle du jeu
 		while(true) {
 			repaint();
-			lastFrame = countFPS(lastFrame);
-			
+			lastFrame = countFPS(lastFrame);			
 			try {
 				Thread.sleep(DELAY);
 			} catch (InterruptedException e) {
