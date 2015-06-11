@@ -2,6 +2,7 @@ package menus;
 
 import game.Config;
 import game.Coords;
+import game.Niveau1;
 import game.Render;
 
 import java.awt.Color;
@@ -174,12 +175,16 @@ public class InGameMenu extends BaseMenu {
 	public void addTower(Coords coords) {
 		int x = (coords.getX() - 1) * Config.GAME_CELLSIZE;
 		int y = (coords.getY() - 1) * Config.GAME_CELLSIZE; 
-		System.out.println(coords.getX());
-	   	System.out.println(coords.getY());
-		JLabel label = new JLabel();  
-        label.setIcon(new ImageIcon("resources/t.jpg"));
-        panelGame.add(label);
-        Dimension size = label.getPreferredSize();
-        label.setBounds(y, x, size.width, size.height);
+	   	int[][] Chemin = Niveau1.Chemin1();
+	   	if (Chemin[(x/40)][(y/40)]==0){   		
+			JLabel label = new JLabel();  
+        	label.setIcon(new ImageIcon("resources/t.jpg"));
+        	panelGame.add(label);
+        	Dimension size = label.getPreferredSize();
+        	label.setBounds(y, x, size.width, size.height);
+        }
+	   	else {
+	   		System.out.println("Impossible");
+	   	}
 	}
 }

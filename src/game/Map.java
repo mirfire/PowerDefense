@@ -27,15 +27,14 @@ public class Map {
 	private int y;
 	private SpawnPoint spawnPoint;
 	private Workstation workstation;
-	private int Chemin[][];
+	
 
-	public Map(String mapName, String backgroundPath, int width, int height, int[][] Chemin) {
+	public Map(String mapName, String backgroundPath, int width, int height) {
 		this.backgroundPath = backgroundPath;
 		this.seekBackgroundImage(backgroundPath);;
 		this.width = width;
 		this.height = height;
 		this.cases = new Case[height][width];
-		this.Chemin = Chemin;
 	}
 	
 	public Map() {
