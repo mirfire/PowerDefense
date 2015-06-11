@@ -2,6 +2,7 @@ package database;
 
 import entities.Workstation;
 import game.Config;
+import game.Game;
 import game.Map;
 import game.SpawnPoint;
 
@@ -92,6 +93,27 @@ public class ReadData {
 				workstation.getCoords().setX(results.getInt("x"));
 				workstation.getCoords().setY(results.getInt("y"));
 				return workstation;
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	public Game readSavedGameFromDB(int gameID) {
+		Game game = new Game();
+		this.sqlQuery = "SELECT * FROM saved_games WHERE `gameID`=" + gameID + ";";
+		try {
+			results = statement.executeQuery(sqlQuery);
+			if (results.next()) {
+				game.setGameName(results.getString("gameName"));
+				game.setResources(results.getInt("resources"));
+				game.setMap(readMapFromDB(results.getInt("mapID")));
+				game.setScore(results.getInt("score"));
+				game.setSurvivedTime(results.getInt("survivedTime"));
+				game.setKills(results.getInt("kills"));
+				game.setPause(true);
+				return game;
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

@@ -70,6 +70,10 @@ public class Game {
 
 	}
 
+	public Game() {
+		
+	}
+
 	public int getResources() {
 		return resources;
 	}
@@ -85,13 +89,4 @@ public class Game {
 	public static void exitGame(int exitcode) {
 		System.exit(exitcode);
 	}
-
-	public void startGame() {
-
-	}
-
-	public void renderGame(JPanel panelGame) {
-
-	}
-
 }
