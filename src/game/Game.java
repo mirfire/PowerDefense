@@ -19,6 +19,46 @@ public class Game {
 		this.gameName = gameName;
 	}
 	
+	public Map getMap() {
+		return map;
+	}
+
+	public void setMap(Map map) {
+		this.map = map;
+	}
+
+	public int getScore() {
+		return score;
+	}
+
+	public void setScore(int score) {
+		this.score = score;
+	}
+
+	public int getSurvivedTime() {
+		return survivedTime;
+	}
+
+	public void setSurvivedTime(int survivedTime) {
+		this.survivedTime = survivedTime;
+	}
+
+	public int getKills() {
+		return kills;
+	}
+
+	public void setKills(int kills) {
+		this.kills = kills;
+	}
+
+	public boolean isPause() {
+		return pause;
+	}
+
+	public void setPause(boolean pause) {
+		this.pause = pause;
+	}
+
 	public Game(String gameName) {
 		this.ressources = 300;
 		this.map = Map.readMapFromDB(1);
