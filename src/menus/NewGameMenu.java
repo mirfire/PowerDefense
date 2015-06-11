@@ -13,20 +13,21 @@ import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
 
 public class NewGameMenu extends BaseMenu {
-
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -3611441847895404790L;
-
+	
+	private JPanel panelLogo;
+	private JLabel lblLogo, lblGameName;
+	private JButton btnLaunchNewGame, btnBackToMainMenu;
+	private JTextPane txtNewGameName;
+	
 	public NewGameMenu() {
 		setLayout(null);
 		
-		JTextPane txtNewGameName = new JTextPane();
+		txtNewGameName = new JTextPane();
 		txtNewGameName.setBounds(94, 347, 311, 20);
 		add(txtNewGameName);
 		
-		JButton btnBackToMainMenu = new JButton("Retour");
+		btnBackToMainMenu = new JButton("Retour");
 		btnBackToMainMenu.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				backToMainMenu();
@@ -35,31 +36,46 @@ public class NewGameMenu extends BaseMenu {
 		btnBackToMainMenu.setBounds(150, 439, 200, 50);
 		add(btnBackToMainMenu);
 		
-		JPanel panelLogo = new JPanel();
+		panelLogo = new JPanel();
 		panelLogo.setBounds(10, 30, 480, 200);
 		add(panelLogo);
 		panelLogo.setLayout(new BorderLayout(0, 0));
 		
 		ImageIcon logo = new ImageIcon("resources/logo.png");
-		JLabel lblLogo = new JLabel("", logo, JLabel.CENTER);
+		lblLogo = new JLabel("", logo, JLabel.CENTER);
 		lblLogo.setSize(480, 50);
 		lblLogo.setLocation(10, 0);
 		panelLogo.add(lblLogo, BorderLayout.CENTER);
 		
-		JLabel lblGameName = new JLabel("Nom de la Partie");
+		lblGameName = new JLabel("Nom de la Partie");
 		lblGameName.setHorizontalAlignment(SwingConstants.LEFT);
 		lblGameName.setFont(new Font("Calibri", Font.PLAIN, 14));
 		lblGameName.setBounds(94, 326, 165, 20);
 		add(lblGameName);
 		
-		JButton btnLaunchNewGame = new JButton("Lancer Partie !");
+		btnLaunchNewGame = new JButton("Lancer Partie !");
 		btnLaunchNewGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				showInGameMenu();
-				windowSetGameMode();
+				if(checkGameName() == true) {
+					showInGameMenu();
+					windowSetGameMode();
+				}
+				else {
+					showErrorMessage("Votre nom de partie doit faire au moins trois caractères.");
+				}
 			}
 		});
 		btnLaunchNewGame.setBounds(150, 378, 200, 50);
 		add(btnLaunchNewGame);
-	}	
+	}
+	
+	public boolean checkGameName() {
+		String enteredText = this.txtNewGameName.getText();
+		
+		if(enteredText == null)
+			return false;
+		if(enteredText.length() < 3)
+			return false;		
+		return true;
+	}
 }
