@@ -25,15 +25,15 @@ import javax.swing.SwingConstants;
 
 public class InGameMenu extends BaseMenu {
 	private static final long serialVersionUID = -8351826923333261445L;
-	static Render panelGame;
-	static JPanel panelMenuGame;
-	static JPanel panelToolBar;
-	static JLabel lblMapname;
-	static JMenuBar menuBar;
-	static JMenu mnGame;
-	static JMenuItem mntmLeaveGame, mntmSauvegarder;
-	static JCheckBoxMenuItem chckbxmntmPause;
-	static JSeparator separator;
+	public static Render panelGame;
+	public static JPanel panelMenuGame;
+	public static JPanel panelToolBar;
+	public static JLabel lblMapname, lblResources;
+	public static JMenuBar menuBar;
+	public static JMenu mnGame;
+	public static JMenuItem mntmLeaveGame, mntmSauvegarder;
+	public static JCheckBoxMenuItem chckbxmntmPause;
+	public static JSeparator separator;
 	
 	
 	public InGameMenu() {
@@ -67,6 +67,12 @@ public class InGameMenu extends BaseMenu {
 		lblMapname.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMapname.setBounds(10, 10, 250, 30);
 		panelToolBar.add(lblMapname);
+		
+		lblResources = new JLabel("" + panelGame.getGame().getRessources());
+		lblResources.setIcon(new ImageIcon("resources/interface/scrap_metal.png"));
+		lblResources.setFont(new Font("Calibri", Font.PLAIN, 14));
+		lblResources.setBounds(10, 51, 250, 36);
+		panelToolBar.add(lblResources);
 		
 		menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 900, 21);
