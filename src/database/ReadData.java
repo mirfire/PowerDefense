@@ -52,6 +52,7 @@ public class ReadData {
 			results = statement.executeQuery(sqlQuery);
 			if (results.next()) {
 				map.setMapName(results.getString("mapName"));
+				map.setMapID(results.getInt("mapID"));
 				map.setBackgroundPath(results.getString("backgroundPath"));
 				map.seekBackgroundImage(map.getBackgroundPath());
 				map.setHeight(results.getInt("height"));

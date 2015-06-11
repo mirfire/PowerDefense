@@ -26,6 +26,8 @@ import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
+import database.WriteData;
+
 public class InGameMenu extends BaseMenu {
 	private static final long serialVersionUID = -8351826923333261445L;
 	public static Render panelGame;
@@ -95,6 +97,12 @@ public class InGameMenu extends BaseMenu {
 		mnGame.add(chckbxmntmPause);
 		
 		mntmSauvegarder = new JMenuItem("Sauvegarder");
+		mntmSauvegarder.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				WriteData savegame = new WriteData();
+				savegame.saveGameToDB(panelGame.getGame());
+			}
+		});
 		mntmSauvegarder.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
 		mnGame.add(mntmSauvegarder);
 		
