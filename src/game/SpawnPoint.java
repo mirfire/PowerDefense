@@ -8,7 +8,7 @@ public class SpawnPoint {
 	}
 	
 	public SpawnPoint() {
-		coords = new Coords(0,1);
+		coords = new Coords(0,0);
 	}
 
 	public Coords getCoords() {

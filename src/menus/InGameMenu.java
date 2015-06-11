@@ -47,7 +47,7 @@ public class InGameMenu extends BaseMenu {
 		panelGame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				addTower(getClickedCase(e));	
+				addTower(getClickedCase(e));				
 			}
 		});
 		panelGame.setLayout(null);

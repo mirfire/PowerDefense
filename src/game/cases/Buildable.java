@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class Buildable extends Case{
+public class Buildable extends Case {
 
 	public Buildable(int x, int y) {
 		super(x, y);

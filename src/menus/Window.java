@@ -20,7 +20,7 @@ public class Window extends JFrame {
 	private LoadGameMenu loadGameMenu;
 	private InGameMenu inGameMenu;
 	static CardLayout LayoutManager;
-	
+
 	public JPanel getMenusContainer() {
 		return menusContainer;
 	}
@@ -64,9 +64,9 @@ public class Window extends JFrame {
 	public Window() {
 		addWindowListener(new WindowAdapter() {
 			public void windowClosing(WindowEvent e) {
-				int confirmed = JOptionPane.showConfirmDialog(null, 
-					"Voulez vous vraiment quitter le jeu ?", "Confirmation",
-					JOptionPane.YES_NO_OPTION);
+				int confirmed = JOptionPane.showConfirmDialog(null,
+						"Voulez vous vraiment quitter le jeu ?",
+						"Confirmation", JOptionPane.YES_NO_OPTION);
 				if (confirmed == JOptionPane.YES_OPTION) {
 					dispose();
 				}
@@ -75,14 +75,14 @@ public class Window extends JFrame {
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setSize(900, 900);
 		this.setResizable(false);
-		this.setTitle(Config.GAME_TITLE);	
+		this.setTitle(Config.GAME_TITLE);
 		LayoutManager = new CardLayout(0, 0);
 		menusContainer = new MenusContainer(this);
 		mainMenu = new MainMenu();
 		newGameMenu = new NewGameMenu();
 		loadGameMenu = new LoadGameMenu();
 		inGameMenu = new InGameMenu();
-		
+
 		getContentPane().add(menusContainer);
 		menusContainer.setLayout(LayoutManager);
 		menusContainer.add(mainMenu, Menus.MAIN.toString());
@@ -90,11 +90,11 @@ public class Window extends JFrame {
 		menusContainer.add(loadGameMenu, Menus.LOADGAME.toString());
 		menusContainer.add(inGameMenu, Menus.INGAME.toString());
 	}
-	
+
 	public void setMenuMode() {
 		setSize(510, 520);
 	}
-	
+
 	public void setGameMode() {
 		setSize(900, 900);
 	}

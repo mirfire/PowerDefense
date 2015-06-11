@@ -7,7 +7,7 @@ import java.io.IOException;
 
 import javax.imageio.ImageIO;
 
-public class MonsterPath extends Case{
+public class MonsterPath extends Case {
 
 	public MonsterPath(int x, int y) {
 		super(x, y);

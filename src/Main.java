@@ -1,10 +1,12 @@
 import javax.swing.UIManager;
 import javax.swing.UnsupportedLookAndFeelException;
 import menus.Window;
+
 public class Main {
 	public static void main(String[] args) {
 		try {
-			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+			UIManager
+					.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
 		} catch (ClassNotFoundException e1) {
 			e1.printStackTrace();
 		} catch (InstantiationException e1) {
@@ -19,7 +21,7 @@ public class Main {
 			frame.setTitle("PowerDefense");
 			frame.setLocationRelativeTo(null);
 			frame.setVisible(true);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

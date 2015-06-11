@@ -27,16 +27,15 @@ public class Map {
 	private int y;
 	private SpawnPoint spawnPoint;
 	private Workstation workstation;
-	
 
 	public Map(String mapName, String backgroundPath, int width, int height) {
 		this.backgroundPath = backgroundPath;
-		this.seekBackgroundImage(backgroundPath);;
+		this.seekBackgroundImage(backgroundPath);
 		this.width = width;
 		this.height = height;
 		this.cases = new Case[height][width];
 	}
-	
+
 	public Map() {
 		this.mapName = null;
 		this.backgroundPath = null;
@@ -52,13 +51,13 @@ public class Map {
 		this.backgroundPath = backgroundPath;
 		this.width = 15;
 		this.height = 15;
-		this.spawnPoint = new SpawnPoint(1,1);
+		this.spawnPoint = new SpawnPoint(1, 1);
 	}
-	
+
 	public Map(int mapID) {
 		readMapFromDB(mapID);
 	}
-	
+
 	public String getMapName() {
 		return mapName;
 	}
@@ -106,7 +105,7 @@ public class Map {
 	public void setBackgroundImage(Image backgroundImage) {
 		this.backgroundImage = backgroundImage;
 	}
-	
+
 	public void seekBackgroundImage(String backgroundPath) {
 		try {
 			this.backgroundImage = ImageIO.read(new File(backgroundPath));
@@ -114,7 +113,7 @@ public class Map {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public SpawnPoint getSpawnPoint() {
 		return spawnPoint;
 	}
@@ -134,7 +133,8 @@ public class Map {
 	private void readMapFromFile() {
 		String data = "", currentLine;
 		try {
-			BufferedReader br = new BufferedReader(new FileReader("map_01.json"));
+			BufferedReader br = new BufferedReader(
+					new FileReader("map_01.json"));
 			try {
 				while ((currentLine = br.readLine()) != null) {
 					data = data + currentLine;
@@ -146,20 +146,20 @@ public class Map {
 		}
 		try {
 			Object obj = JSONValue.parse(data);
-			JSONObject  readData = (JSONObject )obj;
+			JSONObject readData = (JSONObject) obj;
 			this.mapName = (String) readData.get("mapName");
 			this.backgroundPath = (String) readData.get("backgroundPath");
 			this.width = 15;
 			this.height = 15;
 			this.cases = new Case[(int) height][(int) width];
 			JSONArray SpawnPoint = (JSONArray) readData.get("spawnPoint");
-			this.spawnPoint = new SpawnPoint((int) (long) SpawnPoint.get(0), (int) (long) SpawnPoint.get(1));
-		} 
-		catch (Exception e) {
-	        e.printStackTrace();
-	    }
+			this.spawnPoint = new SpawnPoint((int) (long) SpawnPoint.get(0),
+					(int) (long) SpawnPoint.get(1));
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
-	
+
 	static Map readMapFromDB(int mapID) {
 		ReadData readData = new ReadData();
 		return readData.readMapFromDB(mapID);
