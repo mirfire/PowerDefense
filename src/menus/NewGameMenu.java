@@ -13,6 +13,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
+import javax.swing.JRadioButton;
 
 public class NewGameMenu extends BaseMenu {
 	private static final long serialVersionUID = -3611441847895404790L;
@@ -39,15 +40,11 @@ public class NewGameMenu extends BaseMenu {
 		add(btnBackToMainMenu);
 		
 		panelLogo = new JPanel();
-		panelLogo.setBounds(10, 30, 480, 200);
+		panelLogo.setBounds(10, 11, 480, 200);
 		add(panelLogo);
 		panelLogo.setLayout(new BorderLayout(0, 0));
 		
 		ImageIcon logo = new ImageIcon("resources/logo.png");
-		lblLogo = new JLabel("", logo, JLabel.CENTER);
-		lblLogo.setSize(480, 50);
-		lblLogo.setLocation(10, 0);
-		panelLogo.add(lblLogo, BorderLayout.CENTER);
 		
 		lblGameName = new JLabel("Nom de la Partie");
 		lblGameName.setHorizontalAlignment(SwingConstants.LEFT);
@@ -71,6 +68,26 @@ public class NewGameMenu extends BaseMenu {
 		});
 		btnLaunchNewGame.setBounds(150, 378, 200, 50);
 		add(btnLaunchNewGame);
+		
+		JRadioButton radioMap1 = new JRadioButton("Carte 1");
+		radioMap1.setBounds(12, 296, 109, 23);
+		add(radioMap1);
+		
+		JRadioButton radioMap2 = new JRadioButton("Carte 2");
+		radioMap2.setBounds(133, 296, 109, 23);
+		add(radioMap2);
+		
+		JRadioButton radioMap3 = new JRadioButton("Carte 3");
+		radioMap3.setBounds(254, 296, 109, 23);
+		add(radioMap3);
+		
+		JRadioButton radioMap4 = new JRadioButton("Carte 4");
+		radioMap4.setBounds(375, 296, 109, 23);
+		add(radioMap4);
+		lblLogo = new JLabel("", logo, JLabel.CENTER);
+		add(lblLogo);
+		lblLogo.setSize(480, 200);
+		lblLogo.setLocation(10, 11);
 	}
 	
 	public Game createGame(String gameName) {

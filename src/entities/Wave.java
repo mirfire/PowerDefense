@@ -69,7 +69,6 @@ public class Wave {
 						ErreurHTTP404.SpawnEnnemies();
 						break;
 					}
-
 				}
 			} else {
 				this.waveSpawning = false;
