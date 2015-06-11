@@ -15,7 +15,6 @@ public class Render extends JPanel implements Runnable {
 	private static final long serialVersionUID = 7990237525170526056L;
 	Thread menuThread =  new Thread(this);
 	Game game;
-	Map map;
 	JPanel parentPanel;	
 	
 	private final long DELAY = 1;
@@ -25,7 +24,7 @@ public class Render extends JPanel implements Runnable {
 	public Render(JPanel panel) { 
 		menuThread.start();
 		this.parentPanel = panel;
-		game = new Game("GameTest");		
+		game = new Game("GameTest");
 	}
 
 	public void run() {
@@ -45,6 +44,14 @@ public class Render extends JPanel implements Runnable {
 		}
 	}
 	
+	public Game getGame() {
+		return game;
+	}
+
+	public void setGame(Game game) {
+		this.game = game;
+	}
+
 	public void paintComponent(Graphics g) {
 		clearGameScreen(g);
 		
