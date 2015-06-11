@@ -11,6 +11,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
+import javax.swing.UIManager;
 
 public class LoadGameMenu extends BaseMenu {
 	private static final long serialVersionUID = 6607761919422010142L;
@@ -44,9 +45,10 @@ public class LoadGameMenu extends BaseMenu {
 		label.setBounds(94, 326, 165, 20);
 		add(label);
 		
-		JTextPane textPane = new JTextPane();
-		textPane.setBounds(94, 347, 311, 20);
-		add(textPane);
+		JTextPane textLoadGameName = new JTextPane();
+		textLoadGameName.setBounds(94, 347, 311, 20);
+		textLoadGameName.setBorder(UIManager.getBorder("TextField.border"));
+		add(textLoadGameName);
 		
 		JButton btnChargerPartie = new JButton("Charger Partie !");
 		btnChargerPartie.setBounds(150, 378, 200, 50);
