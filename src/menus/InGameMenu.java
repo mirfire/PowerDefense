@@ -103,6 +103,11 @@ public class InGameMenu extends BaseMenu {
 		
 		mntmLeaveGame = new JMenuItem("Quitter");
 		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
+		mntmLeaveGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showConfirmExitGameDialog();
+			}
+		});
 		mnGame.add(mntmLeaveGame);
 		
 	}
