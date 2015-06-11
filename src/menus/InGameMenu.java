@@ -202,29 +202,25 @@ public class InGameMenu extends BaseMenu {
 	
 	public void addTower(Coords coords) {
 		int x = (coords.getX() - 1) * Config.GAME_CELLSIZE;
-		int y = (coords.getY() - 1) * Config.GAME_CELLSIZE; 
-	   	int[][] Chemin = Niveau1.Chemin1();
+		int y = (coords.getY() - 1) * Config.GAME_CELLSIZE;
+		int[][] Chemin = Niveau1.Chemin1();
 
-	   	if (this.panelGame.getGame().isPause() == false) 
-	   		if (Chemin[(x/40)][(y/40)] == 0){   		
-	   			if (gameIsntPaused()) {
-	   				if (Chemin[(x/40)][(y/40)] == 0){
-	   					if(thereIsEnoughResources(50)) {
-	   				setResources(consumeResources(50));
-					JLabel label = new JLabel();  
-		        	label.setIcon(new ImageIcon("resources/t.jpg"));
-		        	panelGame.add(label);
-		        	Dimension size = label.getPreferredSize();
-		        	label.setBounds(y, x, size.width, size.height);
-	   			}
-	   			else
-	   				showErrorMessage("Pas assez de ressources");
+		if (this.panelGame.getGame().isPause() == false) {			
+			if (gameIsntPaused()) {
+				if (Chemin[(x / 40)][(y / 40)] == 0) {
+					if (thereIsEnoughResources(50)) {
+						setResources(consumeResources(50));
+						JLabel label = new JLabel();
+						label.setIcon(new ImageIcon("resources/t.jpg"));
+						panelGame.add(label);
+						Dimension size = label.getPreferredSize();
+						label.setBounds(y, x, size.width, size.height);
+					} else
+						showErrorMessage("Pas assez de ressources");
 
-	        }
-		   	else
-		   		showErrorMessage("Impossible de placer une tour sur le chemin");
-	   	}   	
-	}
-	
+				} else
+					showErrorMessage("Impossible de placer une tour sur le chemin");
+			}
+		}
 	}
 }
