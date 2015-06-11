@@ -1,6 +1,7 @@
 package entities.towers;
 
 import entities.Unit;
+import entities.ennemies.Ennemy;
 
 public class Tower extends Unit {
 
@@ -23,6 +24,26 @@ public class Tower extends Unit {
 	public void killTower(int HP){		
 		this.HP = 0;	
 	
+	}
+	public int isAtRange(Ennemy e){
+		int eX = e.getX();
+		int eY = e.getY();
+
+		int tX = this.getX();
+		int tY = this.getY();
+
+		int dX = Math.abs(eX - tX);
+		int dY = Math.abs(eY - tY);
+
+		if((dX <= this.range) && 
+				(dY <= this.range)){
+
+			if( ( (dX * dX) + (dY * dY) ) <= (range * range) ){
+				return 1;
+			}
+
+		}
+		return 0;
 	}
 }
 
