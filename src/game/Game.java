@@ -67,6 +67,7 @@ public class Game {
 		this.survivedTime = 0;
 		this.kills = 0;
 		this.pause = false;
+		
 	}
 	
 	public int getRessources() {

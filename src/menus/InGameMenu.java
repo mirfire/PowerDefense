@@ -26,9 +26,6 @@ import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
 
-import java.beans.PropertyChangeListener;
-import java.beans.PropertyChangeEvent;
-
 public class InGameMenu extends BaseMenu {
 	private static final long serialVersionUID = -8351826923333261445L;
 	public static Render panelGame;
@@ -105,11 +102,6 @@ public class InGameMenu extends BaseMenu {
 		mnGame.add(separator);
 		
 		mntmLeaveGame = new JMenuItem("Quitter");
-		mntmLeaveGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				showConfirmExitGameDialog();
-			}
-		});
 		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
 		mnGame.add(mntmLeaveGame);
 		
@@ -212,9 +204,12 @@ public class InGameMenu extends BaseMenu {
 		int x = (coords.getX() - 1) * Config.GAME_CELLSIZE;
 		int y = (coords.getY() - 1) * Config.GAME_CELLSIZE; 
 	   	int[][] Chemin = Niveau1.Chemin1();
-	   	if (gameIsntPaused()) {
-	   		if (Chemin[(x/40)][(y/40)] == 0){
-	   			if(thereIsEnoughResources(50)) {
+
+	   	if (this.panelGame.getGame().isPause() == false) 
+	   		if (Chemin[(x/40)][(y/40)] == 0){   		
+	   			if (gameIsntPaused()) {
+	   				if (Chemin[(x/40)][(y/40)] == 0){
+	   					if(thereIsEnoughResources(50)) {
 	   				setResources(consumeResources(50));
 					JLabel label = new JLabel();  
 		        	label.setIcon(new ImageIcon("resources/t.jpg"));
@@ -224,9 +219,12 @@ public class InGameMenu extends BaseMenu {
 	   			}
 	   			else
 	   				showErrorMessage("Pas assez de ressources");
+
 	        }
 		   	else
 		   		showErrorMessage("Impossible de placer une tour sur le chemin");
 	   	}   	
+	}
+	
 	}
 }
