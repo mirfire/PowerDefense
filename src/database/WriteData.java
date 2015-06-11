@@ -58,7 +58,7 @@ public class WriteData {
 			game.getKills() +
 			");";
 		try {
-			this.statement.executeQuery(sqlQuery);
+			this.statement.executeUpdate(sqlQuery);
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
