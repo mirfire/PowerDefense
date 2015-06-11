@@ -76,7 +76,6 @@ public abstract class BaseMenu extends JPanel {
 	    int y=e.getY();
 	    x = Math.round(x / 40) + 1;
 	    y = Math.round(y / 40) + 1;
-	    System.out.println(x + "," + y);
 	    Coords clickedCase = new Coords(y,x);
 		return clickedCase;
 	}
