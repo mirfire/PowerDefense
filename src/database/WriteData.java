@@ -45,11 +45,13 @@ public class WriteData {
 	
 	public void saveGameToDB(Game game) {
 		this.sqlQuery = "INSERT INTO saved_games" +
-			"(`gameName`, `mapID`, `score`, `survivedTime`, `kills`)" +
+			"(`gameName`, `mapID`, `resources`, `score`, `survivedTime`, `kills`)" +
 			"VALUES ('" + 
 			game.getGameName() +
 			"'," +
 			game.getMap().getMapID() +
+			" ," +
+			game.getResources() +
 			" ," +
 			game.getScore() +
 			" ," +
