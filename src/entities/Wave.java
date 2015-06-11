@@ -3,8 +3,7 @@ package entities;
 import java.util.Random;
 import entities.ennemies.*;
 
-public class wave {
-
+public class Wave {
 	private int waveLvl = 0;
 	private int enemies = 0;
 	private boolean waveSpawning;
@@ -30,15 +29,20 @@ public class wave {
 					enemiesDelay = 0;
 					this.enemies++;
 					switch (this.nombre) {
-					case 1: 	StackOverflow.SpawnEnnemies();
+					case 1:
+						StackOverflow.SpawnEnnemies();
 						break;
-					case 2:		NullPointerAssigment.SpawnEnnemies();
+					case 2:
+						NullPointerAssigment.SpawnEnnemies();
 						break;
-					case 3:		ErreurHTTP404.SpawnEnnemies();
+					case 3:
+						ErreurHTTP404.SpawnEnnemies();
 						break;
-					case 4:		BlueScreen.SpawnEnnemies();
+					case 4:
+						BlueScreen.SpawnEnnemies();
 						break;
-					case 5:		FortiGuardWebFiltering.SpawnEnnemies();
+					case 5:
+						FortiGuardWebFiltering.SpawnEnnemies();
 						break;
 					}
 
@@ -55,11 +59,14 @@ public class wave {
 					System.out.println("Enemies Spawned");
 					this.enemies++;
 					switch (this.nombrePetit) {
-					case 1: 	StackOverflow.SpawnEnnemies();
+					case 1:
+						StackOverflow.SpawnEnnemies();
 						break;
-					case 2:		NullPointerAssigment.SpawnEnnemies();
+					case 2:
+						NullPointerAssigment.SpawnEnnemies();
 						break;
-					case 3:		ErreurHTTP404.SpawnEnnemies();
+					case 3:
+						ErreurHTTP404.SpawnEnnemies();
 						break;
 					}
 
