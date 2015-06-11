@@ -36,7 +36,7 @@ public class InGameMenu extends BaseMenu {
 	public static JLabel lblGameName, lblMapName, lblResources;
 	public static JMenuBar menuBar;
 	public static JMenu mnGame;
-	public static JMenuItem mntmLeaveGame, mntmSauvegarder;
+	public static JMenuItem mntmLeaveGame, mntmSaveGame;
 	public static JCheckBoxMenuItem chckbxmntmPause;
 	public static JSeparator separator;
 	
@@ -96,21 +96,26 @@ public class InGameMenu extends BaseMenu {
 		chckbxmntmPause.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, 0));
 		mnGame.add(chckbxmntmPause);
 		
-		mntmSauvegarder = new JMenuItem("Sauvegarder");
-		mntmSauvegarder.addActionListener(new ActionListener() {
+		mntmSaveGame = new JMenuItem("Sauvegarder");
+		mntmSaveGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				WriteData savegame = new WriteData();
 				savegame.saveGameToDB(panelGame.getGame());
 			}
 		});
-		mntmSauvegarder.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
-		mnGame.add(mntmSauvegarder);
+		mntmSaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
+		mnGame.add(mntmSaveGame);
 		
 		separator = new JSeparator();
 		mnGame.add(separator);
 		
 		mntmLeaveGame = new JMenuItem("Quitter");
 		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
+		mntmLeaveGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				showConfirmExitGameDialog();
+			}
+		});
 		mnGame.add(mntmLeaveGame);
 		
 	}
@@ -173,11 +178,11 @@ public class InGameMenu extends BaseMenu {
 	}
 
 	public JMenuItem getMntmSauvegarder() {
-		return mntmSauvegarder;
+		return mntmSaveGame;
 	}
 
 	public void setMntmSauvegarder(JMenuItem mntmSauvegarder) {
-		InGameMenu.mntmSauvegarder = mntmSauvegarder;
+		InGameMenu.mntmSaveGame = mntmSauvegarder;
 	}
 
 	public JCheckBoxMenuItem getChckbxmntmPause() {
@@ -194,6 +199,7 @@ public class InGameMenu extends BaseMenu {
 	
 	public void setResources(int resources) {
 		InGameMenu.lblResources.setText("" + resources);
+		InGameMenu.panelGame.getGame().setResources(resources);
 	}
 	
 	public boolean thereIsEnoughResources(int consumedResources) {

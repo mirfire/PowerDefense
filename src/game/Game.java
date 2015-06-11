@@ -79,7 +79,7 @@ public class Game {
 	}
 
 	public void setResources(int i) {
-		i = resources;
+		resources = i;
 	}
 
 	public void addResources(int i) {
