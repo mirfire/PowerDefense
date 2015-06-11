@@ -77,6 +77,7 @@ public class NewGameMenu extends BaseMenu {
 		add(btnLaunchNewGame);
 		
 		JRadioButton radioMap1 = new JRadioButton("Carte 1");
+		radioMap1.setSelected(true);
 		radioMap1.setBounds(12, 296, 109, 23);
 		add(radioMap1);
 		
