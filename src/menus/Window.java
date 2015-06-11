@@ -5,12 +5,14 @@ import game.Config;
 import java.awt.CardLayout;
 
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.SwingUtilities;
 
-public class Window extends JFrame {	
-	/**
-	 * 
-	 */
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+
+public class Window extends JFrame {
 	private static final long serialVersionUID = 5409287454413733912L;
 	private MenusContainer menusContainer;
 	private MainMenu mainMenu;
@@ -60,6 +62,17 @@ public class Window extends JFrame {
 	}
 
 	public Window() {
+		addWindowListener(new WindowAdapter() {
+			  public void windowClosing(WindowEvent e) {
+			    int confirmed = JOptionPane.showConfirmDialog(null, 
+			        "Voulez vous vraiment quitter le jeu ?", "Confirmation",
+			        JOptionPane.YES_NO_OPTION);
+
+			    if (confirmed == JOptionPane.YES_OPTION) {
+			      dispose();
+			    }
+			  }
+			});
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setSize(900, 900);
 		this.setResizable(false);
@@ -71,7 +84,7 @@ public class Window extends JFrame {
 		loadGameMenu = new LoadGameMenu();
 		inGameMenu = new InGameMenu();
 		
-		this.add(menusContainer);
+		getContentPane().add(menusContainer);
 		menusContainer.setLayout(LayoutManager);
 		menusContainer.add(mainMenu, Menus.MAIN.toString());
 		menusContainer.add(newGameMenu, Menus.NEWGAME.toString());
