@@ -40,16 +40,22 @@ CREATE TABLE IF NOT EXISTS `saved_games` (
   `gameID` int(11) NOT NULL AUTO_INCREMENT,
   `gameName` tinytext NOT NULL,
   `mapID` int(11) NOT NULL,
+  `resources` int(11) NOT NULL,
   `score` int(11) NOT NULL,
   `survivedTime` int(11) NOT NULL,
   `kills` int(11) NOT NULL,
   PRIMARY KEY (`gameID`),
   KEY `FK_saved_games_mapID` (`mapID`),
   CONSTRAINT `FK_saved_games_mapID` FOREIGN KEY (`mapID`) REFERENCES `maps` (`mapID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 
--- Export de données de la table projet_java.saved_games : ~0 rows (environ)
+-- Export de données de la table projet_java.saved_games : ~4 rows (environ)
 /*!40000 ALTER TABLE `saved_games` DISABLE KEYS */;
+INSERT INTO `saved_games` (`gameID`, `gameName`, `mapID`, `resources`, `score`, `survivedTime`, `kills`) VALUES
+	(1, 'Test', 1, 0, 0, 0, 0),
+	(2, 'Rockfire Joue !', 3, 0, 0, 0, 0),
+	(3, 'TEST50', 2, 300, 0, 0, 0),
+	(4, 'Estez', 2, 150, 0, 0, 0);
 /*!40000 ALTER TABLE `saved_games` ENABLE KEYS */;
 
 
