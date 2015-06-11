@@ -2,7 +2,6 @@ package menus;
 
 import game.Config;
 import game.Coords;
-import game.Game;
 import game.Niveau1;
 import game.Render;
 
@@ -181,10 +180,31 @@ public class InGameMenu extends BaseMenu {
 		InGameMenu.chckbxmntmPause = chckbxmntmPause;
 	}
 	
+	public int consumeResources(int consumedResources) {
+		return (Integer.parseInt(InGameMenu.lblResources.getText())) - consumedResources;
+	}
+	
+	public void setResources(int resources) {
+		InGameMenu.lblResources.setText("" + resources);
+	}
+	
+	public boolean thereIsEnoughResources(int consumedResources) {
+		if((Integer.parseInt(InGameMenu.lblResources.getText()) - consumedResources) < 0)
+			return false;
+		return true;
+	}
+	
+	public boolean gameIsntPaused() {
+		if(this.panelGame.getGame().isPause() == false)
+			return true;
+		return false;
+	}
+	
 	public void addTower(Coords coords) {
 		int x = (coords.getX() - 1) * Config.GAME_CELLSIZE;
 		int y = (coords.getY() - 1) * Config.GAME_CELLSIZE; 
 	   	int[][] Chemin = Niveau1.Chemin1();
+<<<<<<< HEAD
 	   	if (this.panelGame.getGame().isPause() == false) 
 	   		if (Chemin[(x/40)][(y/40)] == 0){   		
 				JLabel label = new JLabel();  
@@ -192,11 +212,24 @@ public class InGameMenu extends BaseMenu {
 	        	panelGame.add(label);
 	        	Dimension size = label.getPreferredSize();
 	        	label.setBounds(y, x, size.width, size.height);
+=======
+	   	if (gameIsntPaused()) {
+	   		if (Chemin[(x/40)][(y/40)] == 0){
+	   			if(thereIsEnoughResources(50)) {
+	   				setResources(consumeResources(50));
+					JLabel label = new JLabel();  
+		        	label.setIcon(new ImageIcon("resources/t.jpg"));
+		        	panelGame.add(label);
+		        	Dimension size = label.getPreferredSize();
+		        	label.setBounds(y, x, size.width, size.height);
+	   			}
+	   			else
+	   				showErrorMessage("Pas assez de ressources");
+>>>>>>> branch 'master' of https://github.com/r0cknfire/PowerDefense.git
 	        }
-		   	else {
+		   	else
 		   		showErrorMessage("Impossible de placer une tour sur le chemin");
-		   	}
-	   	}	   	
+	   	}   	
 	}
 	
 
