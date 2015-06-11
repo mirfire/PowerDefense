@@ -1,5 +1,7 @@
 package menus;
 
+import game.Config;
+import game.Coords;
 import game.Render;
 
 import java.awt.Color;
@@ -12,7 +14,6 @@ import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JCheckBoxMenuItem;
-import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
@@ -43,30 +44,7 @@ public class InGameMenu extends BaseMenu {
 		panelGame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				getClickedCase(e);
-				int x=e.getX();
-			    int y=e.getY();
-			    x = Math.round(x / 40) + 1;
-			    y = Math.round(y / 40) + 1;
-			    x=(x-1)*40;
-			    y=(y-1)*40;
-			    
-			   System.out.println(x);
-			   System.out.println(y);
-				JFrame frame = new JFrame("Display Image");  
-		        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
-
-		        
-		        panelGame.setLayout(null);
-				JLabel label = new JLabel();  
-		        label.setIcon(new ImageIcon("resources/t.jpg"));
-		        panelGame.add(label);
-		        Dimension size = label.getPreferredSize();
-		        label.setBounds(x, y, size.width, size.height);
-
-		        frame.setSize(10, 10);
-		        frame.setVisible(false);
-				
+				addTower(getClickedCase(e));				
 			}
 		});
 		panelGame.setLayout(null);
@@ -84,7 +62,7 @@ public class InGameMenu extends BaseMenu {
 		panelToolBar.setBounds(620, 32, 270, 600);
 		add(panelToolBar);
 		
-		lblMapname = new JLabel("MapName");
+		lblMapname = new JLabel(panelGame.getGame().getMap().getMapName());
 		lblMapname.setFont(new Font("Calibri", Font.PLAIN, 18));
 		lblMapname.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMapname.setBounds(10, 10, 250, 30);
@@ -185,5 +163,17 @@ public class InGameMenu extends BaseMenu {
 
 	public void setChckbxmntmPause(JCheckBoxMenuItem chckbxmntmPause) {
 		InGameMenu.chckbxmntmPause = chckbxmntmPause;
+	}
+	
+	public void addTower(Coords coords) {
+		int x = (coords.getX() - 1) * Config.GAME_CELLSIZE;
+		int y = (coords.getY() - 1) * Config.GAME_CELLSIZE; 
+		System.out.println(coords.getX());
+	   	System.out.println(coords.getY());
+		JLabel label = new JLabel();  
+        label.setIcon(new ImageIcon("resources/t.jpg"));
+        panelGame.add(label);
+        Dimension size = label.getPreferredSize();
+        label.setBounds(y, x, size.width, size.height);
 	}
 }
