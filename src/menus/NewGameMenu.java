@@ -127,15 +127,6 @@ public class NewGameMenu extends BaseMenu {
 		return game;
 	}
 
-	public void loadInterface() {
-		InGameMenu.lblGameName.setText(InGameMenu.panelGame.getGame()
-				.getGameName());
-		InGameMenu.lblMapName.setText(InGameMenu.panelGame.getGame().getMap()
-				.getMapName());
-		InGameMenu.lblResources.setText(""
-				+ InGameMenu.panelGame.getGame().getRessources());
-	}
-
 	public boolean checkGameName() {
 		String enteredText = txtNewGameName.getText();
 

@@ -79,4 +79,13 @@ public abstract class BaseMenu extends JPanel {
 		Coords clickedCase = new Coords(y, x);
 		return clickedCase;
 	}
+	
+	public void loadInterface() {
+		InGameMenu.lblGameName.setText(InGameMenu.panelGame.getGame()
+				.getGameName());
+		InGameMenu.lblMapName.setText(InGameMenu.panelGame.getGame().getMap()
+				.getMapName());
+		InGameMenu.lblResources.setText(""
+				+ InGameMenu.panelGame.getGame().getRessources());
+	}
 }
