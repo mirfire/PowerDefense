@@ -37,82 +37,74 @@ public class InGameMenu extends BaseMenu {
 	public static JMenuItem mntmLeaveGame, mntmSauvegarder;
 	public static JCheckBoxMenuItem chckbxmntmPause;
 	public static JSeparator separator;
-
+	
+	
 	public InGameMenu() {
-
+		
 		setLayout(null);
-
+		
 		panelGame = new Render(this);
 		panelGame.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				addTower(getClickedCase(e));
+				addTower(getClickedCase(e));				
 			}
 		});
 		panelGame.setLayout(null);
 		panelGame.setBounds(10, 32, 600, 600);
 		add(panelGame);
-
+		
 		panelMenuGame = new JPanel();
 		panelMenuGame.setBackground(Color.ORANGE);
 		panelMenuGame.setBounds(10, 643, 880, 226);
 		add(panelMenuGame);
-
+		
 		panelToolBar = new JPanel();
 		panelToolBar.setLayout(null);
 		panelToolBar.setBackground(Color.PINK);
 		panelToolBar.setBounds(620, 32, 270, 600);
 		add(panelToolBar);
-
+		
 		lblGameName = new JLabel("GameName");
 		lblGameName.setHorizontalAlignment(SwingConstants.CENTER);
 		lblGameName.setFont(new Font("Calibri", Font.BOLD, 25));
 		lblGameName.setBounds(10, 11, 250, 30);
 		panelToolBar.add(lblGameName);
-
+		
 		lblMapName = new JLabel("MapName");
 		lblMapName.setFont(new Font("Calibri", Font.PLAIN, 18));
 		lblMapName.setHorizontalAlignment(SwingConstants.CENTER);
 		lblMapName.setBounds(10, 39, 250, 23);
 		panelToolBar.add(lblMapName);
-
+		
 		lblResources = new JLabel("Resources");
-		lblResources.setIcon(new ImageIcon(
-				"resources/interface/scrap_metal.png"));
+		lblResources.setIcon(new ImageIcon("resources/interface/scrap_metal.png"));
 		lblResources.setFont(new Font("Calibri", Font.PLAIN, 14));
 		lblResources.setBounds(10, 69, 250, 36);
 		panelToolBar.add(lblResources);
-
+		
 		menuBar = new JMenuBar();
 		menuBar.setBounds(0, 0, 900, 21);
 		add(menuBar);
-
+		
 		mnGame = new JMenu("Jeu");
 		menuBar.add(mnGame);
-
+		
 		chckbxmntmPause = new JCheckBoxMenuItem("Pause");
-		chckbxmntmPause
-				.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, 0));
+		chckbxmntmPause.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_P, 0));
 		mnGame.add(chckbxmntmPause);
-
+		
 		mntmSauvegarder = new JMenuItem("Sauvegarder");
-		mntmSauvegarder.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S,
-				InputEvent.CTRL_MASK));
+		mntmSauvegarder.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_S, InputEvent.CTRL_MASK));
 		mnGame.add(mntmSauvegarder);
-
+		
 		separator = new JSeparator();
 		mnGame.add(separator);
-
+		
 		mntmLeaveGame = new JMenuItem("Quitter");
-		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q,
-				InputEvent.CTRL_MASK));
-		mntmLeaveGame.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				showConfirmExitGameDialog();
-			}
-		});
+		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
 		mnGame.add(mntmLeaveGame);
-
+		
 	}
 
 	public JPanel getPanelGame() {
@@ -187,34 +179,33 @@ public class InGameMenu extends BaseMenu {
 	public void setChckbxmntmPause(JCheckBoxMenuItem chckbxmntmPause) {
 		InGameMenu.chckbxmntmPause = chckbxmntmPause;
 	}
-
+	
 	public int consumeResources(int consumedResources) {
-		return (Integer.parseInt(InGameMenu.lblResources.getText()))
-				- consumedResources;
+		return (Integer.parseInt(InGameMenu.lblResources.getText())) - consumedResources;
 	}
-
+	
 	public void setResources(int resources) {
 		InGameMenu.lblResources.setText("" + resources);
 	}
-
+	
 	public boolean thereIsEnoughResources(int consumedResources) {
-		if ((Integer.parseInt(InGameMenu.lblResources.getText()) - consumedResources) < 0)
+		if((Integer.parseInt(InGameMenu.lblResources.getText()) - consumedResources) < 0)
 			return false;
 		return true;
 	}
-
+	
 	public boolean gameIsntPaused() {
-		if (this.panelGame.getGame().isPause() == false)
+		if(this.panelGame.getGame().isPause() == false)
 			return true;
 		return false;
 	}
-
+	
 	public void addTower(Coords coords) {
 		int x = (coords.getX() - 1) * Config.GAME_CELLSIZE;
 		int y = (coords.getY() - 1) * Config.GAME_CELLSIZE;
 		int[][] Chemin = Niveau1.Chemin1();
 
-		if (this.panelGame.getGame().isPause() == false) {
+		if (this.panelGame.getGame().isPause() == false) {			
 			if (gameIsntPaused()) {
 				if (Chemin[(x / 40)][(y / 40)] == 0) {
 					if (thereIsEnoughResources(50)) {
