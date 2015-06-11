@@ -13,9 +13,6 @@ import javax.swing.event.AncestorListener;
 
 public class MainMenu extends BaseMenu {
 
-	/**
-	 * 
-	 */
 	private static final long serialVersionUID = -4112595258490648746L;
 
 	public MainMenu() {
@@ -67,7 +64,5 @@ public class MainMenu extends BaseMenu {
 		lblLogo.setSize(480, 50);
 		lblLogo.setLocation(10, 0);
 		panelLogo.add(lblLogo, BorderLayout.CENTER);
-		
-
 	}
 }

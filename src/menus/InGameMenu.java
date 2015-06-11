@@ -8,6 +8,8 @@ import game.Render;
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseAdapter;
@@ -23,6 +25,9 @@ import javax.swing.JPanel;
 import javax.swing.JSeparator;
 import javax.swing.KeyStroke;
 import javax.swing.SwingConstants;
+
+import java.beans.PropertyChangeListener;
+import java.beans.PropertyChangeEvent;
 
 public class InGameMenu extends BaseMenu {
 	private static final long serialVersionUID = -8351826923333261445L;
@@ -94,6 +99,11 @@ public class InGameMenu extends BaseMenu {
 		mnGame.add(separator);
 		
 		mntmLeaveGame = new JMenuItem("Quitter");
+		mntmLeaveGame.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				showConfirmExitGameDialog();
+			}
+		});
 		mntmLeaveGame.setAccelerator(KeyStroke.getKeyStroke(KeyEvent.VK_Q, InputEvent.CTRL_MASK));
 		mnGame.add(mntmLeaveGame);
 		

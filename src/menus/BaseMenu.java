@@ -20,7 +20,9 @@ public abstract class BaseMenu extends JPanel {
 	 * 
 	 */
 	private static final long serialVersionUID = -298918690071573431L;
-	JOptionPane dlgConfirmExitGame;
+	protected JOptionPane dlgConfirmExitGame;
+	protected JOptionPane dlgShowError;
+	
 		
 	public void backToMainMenu() {
 		Window.LayoutManager.show(getParent(), Menus.MAIN.toString());
@@ -42,6 +44,10 @@ public abstract class BaseMenu extends JPanel {
 		int n = JOptionPane.showConfirmDialog((JFrame) SwingUtilities.getRoot(this), "Voulez-vous vraiment quitter ?", "", JOptionPane.YES_NO_OPTION);
 		if(n == 0)
 			Game.exitGame(0);
+	}
+	
+	public void showErrorMessage(String message) {
+		JOptionPane.showMessageDialog((JFrame) SwingUtilities.getRoot(this), message, "Erreur", JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void windowSetMenuMode() {
