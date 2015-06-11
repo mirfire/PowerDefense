@@ -7,13 +7,15 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import javax.swing.ButtonGroup;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextPane;
 import javax.swing.SwingConstants;
-import javax.swing.JRadioButton;
+import javax.swing.UIManager;
 
 public class NewGameMenu extends BaseMenu {
 	private static final long serialVersionUID = -3611441847895404790L;
@@ -27,6 +29,7 @@ public class NewGameMenu extends BaseMenu {
 		setLayout(null);
 		
 		txtNewGameName = new JTextPane();
+		txtNewGameName.setBorder(UIManager.getBorder("TextField.border"));
 		txtNewGameName.setBounds(94, 347, 311, 20);
 		add(txtNewGameName);
 		
@@ -74,6 +77,7 @@ public class NewGameMenu extends BaseMenu {
 		add(btnLaunchNewGame);
 		
 		JRadioButton radioMap1 = new JRadioButton("Carte 1");
+		radioMap1.setSelected(true);
 		radioMap1.setBounds(12, 296, 109, 23);
 		add(radioMap1);
 		
@@ -88,6 +92,12 @@ public class NewGameMenu extends BaseMenu {
 		JRadioButton radioMap4 = new JRadioButton("Carte 4");
 		radioMap4.setBounds(375, 296, 109, 23);
 		add(radioMap4);
+		
+		ButtonGroup chooseMapRadios = new ButtonGroup();
+		chooseMapRadios.add(radioMap1);
+		chooseMapRadios.add(radioMap2);
+		chooseMapRadios.add(radioMap3);
+		chooseMapRadios.add(radioMap4);
 	}
 	
 	public Game createGame(String gameName) {
