@@ -70,11 +70,11 @@ public class Game {
 
 	}
 
-	public int getRessources() {
+	public int getResources() {
 		return resources;
 	}
 
-	public void setRessources(int i) {
+	public void setResources(int i) {
 		i = resources;
 	}
 

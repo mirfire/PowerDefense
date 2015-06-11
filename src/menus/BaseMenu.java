@@ -86,6 +86,6 @@ public abstract class BaseMenu extends JPanel {
 		InGameMenu.lblMapName.setText(InGameMenu.panelGame.getGame().getMap()
 				.getMapName());
 		InGameMenu.lblResources.setText(""
-				+ InGameMenu.panelGame.getGame().getRessources());
+				+ InGameMenu.panelGame.getGame().getResources());
 	}
 }
