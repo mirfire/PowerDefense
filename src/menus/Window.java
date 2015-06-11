@@ -60,7 +60,7 @@ public class Window extends JFrame {
 	}
 
 	public Window() {
-		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setSize(900, 900);
 		this.setResizable(false);
 		this.setTitle(Config.GAME_TITLE);	
