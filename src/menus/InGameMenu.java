@@ -194,7 +194,7 @@ public class InGameMenu extends BaseMenu {
         	label.setBounds(y, x, size.width, size.height);
         }
 	   	else {
-	   		System.out.println("Impossible");
+	   		showErrorMessage("Impossible de placer une tour sur le chemin");
 	   	}
 	}
 }
