@@ -47,7 +47,7 @@ public abstract class BaseMenu extends JPanel {
 	}
 	
 	public void showErrorMessage(String message) {
-		JOptionPane.showMessageDialog((JFrame) SwingUtilities.getRoot(this), message, "Inane error", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog((JFrame) SwingUtilities.getRoot(this), message, "Erreur", JOptionPane.ERROR_MESSAGE);
 	}
 	
 	public void windowSetMenuMode() {
