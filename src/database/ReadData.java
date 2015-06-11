@@ -16,40 +16,41 @@ public class ReadData {
 	Statement statement;
 	ResultSet results;
 	String sqlQuery;
-	
+
 	public ReadData() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver").newInstance();
 		} catch (InstantiationException e) {
-			
+
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
-			
+
 			e.printStackTrace();
 		} catch (ClassNotFoundException e) {
-			
+
 			e.printStackTrace();
 		}
 		try {
-			connToDB = DriverManager.getConnection(Config.DB_CONNECTION_URL, Config.DB_USER, Config.DB_PASS);
+			connToDB = DriverManager.getConnection(Config.DB_CONNECTION_URL,
+					Config.DB_USER, Config.DB_PASS);
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 		try {
 			this.statement = connToDB.createStatement();
 		} catch (SQLException e) {
-			
+
 			e.printStackTrace();
 		}
 	}
-	
+
 	public Map readMapFromDB(int mapID) {
 		Map map = new Map();
 		this.sqlQuery = "SELECT * FROM maps WHERE `mapID`=" + mapID + ";";
 		try {
 			results = statement.executeQuery(sqlQuery);
-			if(results.next()) {
+			if (results.next()) {
 				map.setMapName(results.getString("mapName"));
 				map.setBackgroundPath(results.getString("backgroundPath"));
 				map.seekBackgroundImage(map.getBackgroundPath());
@@ -58,42 +59,43 @@ public class ReadData {
 				map.setSpawnPoint(readSpawnPointFromDB(mapID));
 				map.setWorkstation(readWorkstationFromDB(mapID));
 				return map;
-			}			
-		} catch (SQLException e) {			
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}	
+		}
 		return null;
 	}
-	
+
 	public SpawnPoint readSpawnPointFromDB(int mapID) {
 		SpawnPoint spawnPoint = new SpawnPoint();
 		this.sqlQuery = "SELECT * FROM spawnpoint WHERE `mapID`=" + mapID + ";";
 		try {
 			results = statement.executeQuery(sqlQuery);
-			if(results.next()) {
+			if (results.next()) {
 				spawnPoint.getCoords().setX(results.getInt("x"));
 				spawnPoint.getCoords().setY(results.getInt("y"));
 				return spawnPoint;
-			}			
-		} catch (SQLException e) {			
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}	
+		}
 		return null;
 	}
-	
+
 	public Workstation readWorkstationFromDB(int mapID) {
 		Workstation workstation = new Workstation();
-		this.sqlQuery = "SELECT * FROM workstation WHERE `mapID`=" + mapID + ";";
+		this.sqlQuery = "SELECT * FROM workstation WHERE `mapID`=" + mapID
+				+ ";";
 		try {
 			results = statement.executeQuery(sqlQuery);
-			if(results.next()) {
+			if (results.next()) {
 				workstation.getCoords().setX(results.getInt("x"));
 				workstation.getCoords().setY(results.getInt("y"));
 				return workstation;
-			}			
-		} catch (SQLException e) {			
+			}
+		} catch (SQLException e) {
 			e.printStackTrace();
-		}	
+		}
 		return null;
 	}
 }

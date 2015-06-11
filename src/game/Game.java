@@ -7,10 +7,10 @@ public class Game {
 	private int resources;
 	Map map;
 	private int score;
-	private int survivedTime;	//a modifier
+	private int survivedTime; // a modifier
 	private int kills;
 	private boolean pause;
-	
+
 	public String getGameName() {
 		return gameName;
 	}
@@ -18,7 +18,7 @@ public class Game {
 	public void setGameName(String gameName) {
 		this.gameName = gameName;
 	}
-	
+
 	public Map getMap() {
 		return map;
 	}
@@ -67,9 +67,9 @@ public class Game {
 		this.survivedTime = 0;
 		this.kills = 0;
 		this.pause = false;
-		
+
 	}
-	
+
 	public int getRessources() {
 		return resources;
 	}
@@ -77,7 +77,7 @@ public class Game {
 	public void setRessources(int i) {
 		i = resources;
 	}
-	
+
 	public void addResources(int i) {
 		resources = resources + i;
 	}
@@ -85,13 +85,13 @@ public class Game {
 	public static void exitGame(int exitcode) {
 		System.exit(exitcode);
 	}
-	
+
 	public void startGame() {
-		
+
 	}
-	
+
 	public void renderGame(JPanel panelGame) {
-		
+
 	}
 
 }

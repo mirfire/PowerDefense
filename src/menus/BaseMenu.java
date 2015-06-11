@@ -19,45 +19,48 @@ public abstract class BaseMenu extends JPanel {
 	private static final long serialVersionUID = -298918690071573431L;
 	protected JOptionPane dlgConfirmExitGame;
 	protected JOptionPane dlgShowError;
-	
-		
+
 	public void backToMainMenu() {
 		Window.LayoutManager.show(getParent(), Menus.MAIN.toString());
 	}
-	
+
 	public void showNewGameMenu() {
 		Window.LayoutManager.show(getParent(), Menus.NEWGAME.toString());
 	}
-	
+
 	public void showLoadGameMenu() {
 		Window.LayoutManager.show(getParent(), Menus.LOADGAME.toString());
 	}
-	
+
 	public void showInGameMenu() {
 		Window.LayoutManager.show(getParent(), Menus.INGAME.toString());
 	}
-	
+
 	public void showConfirmExitGameDialog() {
-		int n = JOptionPane.showConfirmDialog((JFrame) SwingUtilities.getRoot(this), "Voulez-vous vraiment quitter ?", "", JOptionPane.YES_NO_OPTION);
-		if(n == 0)
+		int n = JOptionPane
+				.showConfirmDialog((JFrame) SwingUtilities.getRoot(this),
+						"Voulez-vous vraiment quitter ?", "",
+						JOptionPane.YES_NO_OPTION);
+		if (n == 0)
 			Game.exitGame(0);
 	}
-	
+
 	public void showErrorMessage(String message) {
-		JOptionPane.showMessageDialog((JFrame) SwingUtilities.getRoot(this), message, "Erreur", JOptionPane.ERROR_MESSAGE);
+		JOptionPane.showMessageDialog((JFrame) SwingUtilities.getRoot(this),
+				message, "Erreur", JOptionPane.ERROR_MESSAGE);
 	}
-	
+
 	public void windowSetMenuMode() {
 		Window window = (Window) SwingUtilities.getWindowAncestor(getParent());
 		window.setMenuMode();
 	}
-	
+
 	public void windowSetGameMode() {
 		Window window = (Window) SwingUtilities.getWindowAncestor(getParent());
 		window.setGameMode();
 	}
-	
-	public void setPanelGameBackground() {		
+
+	public void setPanelGameBackground() {
 		Graphics g = InGameMenu.panelGame.getGraphics();
 		Image img = null;
 		try {
@@ -67,13 +70,13 @@ public abstract class BaseMenu extends JPanel {
 		}
 		g.drawImage(img, 0, 0, this);
 	}
-	
+
 	public Coords getClickedCase(MouseEvent e) {
-		int x=e.getX();
-	    int y=e.getY();
-	    x = Math.round(x / 40) + 1;
-	    y = Math.round(y / 40) + 1;
-	    Coords clickedCase = new Coords(y,x);
+		int x = e.getX();
+		int y = e.getY();
+		x = Math.round(x / 40) + 1;
+		y = Math.round(y / 40) + 1;
+		Coords clickedCase = new Coords(y, x);
 		return clickedCase;
 	}
 }

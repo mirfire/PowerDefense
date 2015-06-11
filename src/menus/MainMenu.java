@@ -21,12 +21,14 @@ public class MainMenu extends BaseMenu {
 			public void ancestorAdded(AncestorEvent arg0) {
 				windowSetMenuMode();
 			}
+
 			public void ancestorMoved(AncestorEvent arg0) {
 			}
+
 			public void ancestorRemoved(AncestorEvent arg0) {
 			}
 		});
-		
+
 		JButton btnNouvellePartie = new JButton("Nouvelle Partie");
 		btnNouvellePartie.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -35,7 +37,7 @@ public class MainMenu extends BaseMenu {
 		});
 		btnNouvellePartie.setBounds(150, 260, 200, 50);
 		add(btnNouvellePartie);
-		
+
 		JButton btnLoadGame = new JButton("Charger Partie");
 		btnLoadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -44,7 +46,7 @@ public class MainMenu extends BaseMenu {
 		});
 		btnLoadGame.setBounds(150, 340, 200, 50);
 		add(btnLoadGame);
-		
+
 		JButton btnExitGame = new JButton("Quitter");
 		btnExitGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -53,12 +55,12 @@ public class MainMenu extends BaseMenu {
 		});
 		btnExitGame.setBounds(150, 420, 200, 50);
 		add(btnExitGame);
-		
+
 		JPanel panelLogo = new JPanel();
 		panelLogo.setBounds(10, 10, 480, 200);
 		add(panelLogo);
 		panelLogo.setLayout(new BorderLayout(0, 0));
-		
+
 		ImageIcon logo = new ImageIcon("resources/logo.png");
 		JLabel lblLogo = new JLabel("", logo, JLabel.CENTER);
 		lblLogo.setSize(480, 50);

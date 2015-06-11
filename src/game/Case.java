@@ -8,7 +8,7 @@ public abstract class Case {
 	protected boolean monsterPath;
 	protected String spritePath;
 	protected Image sprite;
-	
+
 	public Case(int x, int y) {
 		this.coords.setX(x);
 		this.coords.setY(y);
@@ -53,5 +53,5 @@ public abstract class Case {
 	public void setSprite(Image sprite) {
 		this.sprite = sprite;
 	}
-	
+
 }

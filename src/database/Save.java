@@ -17,13 +17,13 @@ public class Save {
 					+ "\"," + workstationHP + "," + nbResources + ","
 					+ survivedTime + "," + numMap + "," + numWave + ")";
 			System.out.println(query);
-			Connection myConn = DriverManager.getConnection(Config.DB_CONNECTION_URL, Config.DB_USER, Config.DB_PASS);
+			Connection myConn = DriverManager.getConnection(
+					Config.DB_CONNECTION_URL, Config.DB_USER, Config.DB_PASS);
 			Statement myStmt = myConn.createStatement();
 			myStmt.executeUpdate(query);
 			System.out.println("partie sauvegardée");
 
-		} 
-		catch (SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
