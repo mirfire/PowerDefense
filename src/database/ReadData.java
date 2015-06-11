@@ -108,11 +108,11 @@ public class ReadData {
 			if (results.next()) {
 				game.setGameName(results.getString("gameName"));
 				game.setResources(results.getInt("resources"));
-				game.setMap(readMapFromDB(results.getInt("mapID")));
 				game.setScore(results.getInt("score"));
 				game.setSurvivedTime(results.getInt("survivedTime"));
 				game.setKills(results.getInt("kills"));
 				game.setPause(true);
+				game.setMap(readMapFromDB(results.getInt("mapID")));
 				return game;
 			}
 		} catch (SQLException e) {
