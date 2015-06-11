@@ -11,7 +11,7 @@ import java.awt.event.*;
 public class Chrono
 {
 	private static int heure=0,minute=0,seconde=0;
-	public static void (String[] args)
+	public static void chrono()
 	{
 		/* Le timer */
 		int delais=1000;
