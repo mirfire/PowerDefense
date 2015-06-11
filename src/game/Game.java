@@ -4,7 +4,7 @@ import javax.swing.JPanel;
 
 public class Game {
 	private String gameName;
-	private int ressources;
+	private int resources;
 	Map map;
 	private int score;
 	private int survivedTime;	//a modifier
@@ -60,7 +60,7 @@ public class Game {
 	}
 
 	public Game(String gameName, Map map) {
-		this.ressources = 300;
+		this.resources = 300;
 		this.map = map;
 		this.setGameName(gameName);
 		this.score = 0;
@@ -71,19 +71,19 @@ public class Game {
 	}
 	
 	public int getRessources() {
-		return ressources;
+		return resources;
 	}
 
 	public void setRessources(int i) {
-		i = ressources;
+		i = resources;
+	}
+	
+	public void addResources(int i) {
+		resources = resources + i;
 	}
 
 	public static void exitGame(int exitcode) {
 		System.exit(exitcode);
-	}
-	
-	public int pause(){
-		return 1;
 	}
 	
 	public void startGame() {
