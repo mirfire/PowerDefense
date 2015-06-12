@@ -80,12 +80,19 @@ public abstract class BaseMenu extends JPanel {
 		return clickedCase;
 	}
 	
-	public void loadInterface() {
-		InGameMenu.lblGameName.setText(InGameMenu.panelGame.getGame()
-				.getGameName());
-		InGameMenu.lblMapName.setText(InGameMenu.panelGame.getGame().getMap()
-				.getMapName());
-		InGameMenu.lblResources.setText(""
-				+ InGameMenu.panelGame.getGame().getResources());
+	public boolean loadInterface() {
+		if(InGameMenu.panelGame.getGame() != null) {
+			InGameMenu.lblGameName.setText(InGameMenu.panelGame.getGame()
+					.getGameName());
+			InGameMenu.lblMapName.setText(InGameMenu.panelGame.getGame().getMap()
+					.getMapName());
+			InGameMenu.lblResources.setText(""
+					+ InGameMenu.panelGame.getGame().getResources());
+			return true;
+		}
+		else {
+			showErrorMessage("L'ID n'a pas été trouvé");
+			return false;
+		}
 	}
 }

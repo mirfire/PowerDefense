@@ -62,12 +62,18 @@ public class LoadGameMenu extends BaseMenu {
 		btnLoadGame.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if (txtLoadGameID.getText() != null) {
-					int gameID = Integer.parseInt(txtLoadGameID.getText());
-					ReadData data = new ReadData();
-					InGameMenu.panelGame.setGame(data.readSavedGameFromDB(gameID));
-					loadInterface();
-					showInGameMenu();
-					windowSetGameMode();
+					try {
+						int gameID = Integer.parseInt(txtLoadGameID.getText());
+						ReadData data = new ReadData();
+						InGameMenu.panelGame.setGame(data.readSavedGameFromDB(gameID));
+						if(loadInterface() == true) {
+							showInGameMenu();
+							windowSetGameMode();
+						}
+					}
+					catch(NumberFormatException err) {
+						showErrorMessage("Vous n'avez pas entré de chiffre.");
+					}
 				} else {
 					showErrorMessage("Votre nom de partie doit faire au moins trois caractères.");
 				}
