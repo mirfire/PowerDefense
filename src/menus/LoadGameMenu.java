@@ -67,8 +67,10 @@ public class LoadGameMenu extends BaseMenu {
 						ReadData data = new ReadData();
 						InGameMenu.panelGame.setGame(data.readSavedGameFromDB(gameID));
 						if(loadInterface() == true) {
+							InGameMenu.stopSound();
 							showInGameMenu();
 							windowSetGameMode();
+							playGameSound();
 						}
 					}
 					catch(NumberFormatException err) {

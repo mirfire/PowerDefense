@@ -57,8 +57,6 @@ public class Render extends JPanel implements Runnable {
 		clearGameScreen(g);
 
 		drawBackgroundImage(g);
-
-		// TODO : drawCase(g);
 		drawSpawnPoint(g);
 		drawWorkstation(g);
 		Grid(g);

@@ -52,7 +52,7 @@ public abstract class BaseMenu extends JPanel {
 		if (n == 0)
 			Game.exitGame(0);
 	}
-
+	
 	public void showErrorMessage(String message) {
 		JOptionPane.showMessageDialog((JFrame) SwingUtilities.getRoot(this),
 				message, "Erreur", JOptionPane.ERROR_MESSAGE);
