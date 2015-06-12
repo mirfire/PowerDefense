@@ -69,6 +69,7 @@ public class Window extends JFrame {
 						"Confirmation", JOptionPane.YES_NO_OPTION);
 				if (confirmed == JOptionPane.YES_OPTION) {
 					dispose();
+					System.exit(0);
 				}
 			}
 		});
@@ -89,6 +90,7 @@ public class Window extends JFrame {
 		menusContainer.add(newGameMenu, Menus.NEWGAME.toString());
 		menusContainer.add(loadGameMenu, Menus.LOADGAME.toString());
 		menusContainer.add(inGameMenu, Menus.INGAME.toString());
+		inGameMenu.playMainMenuSound();
 	}
 
 	public void setMenuMode() {

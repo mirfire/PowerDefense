@@ -70,9 +70,11 @@ public class NewGameMenu extends BaseMenu {
 				if (checkGameName() == true) {
 					InGameMenu.panelGame.setGame(createGame(
 							txtNewGameName.getText(), interpretChosenMap()));
+					InGameMenu.stopSound();
 					loadInterface();
 					showInGameMenu();
 					windowSetGameMode();
+					playGameSound();
 				} else {
 					showErrorMessage("Votre nom de partie doit faire au moins trois caractères.");
 				}

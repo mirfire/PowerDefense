@@ -9,6 +9,11 @@ import java.awt.event.MouseEvent;
 import java.io.File;
 import java.io.IOException;
 
+import javafx.application.Application;
+import javafx.embed.swing.JFXPanel;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 import javax.imageio.ImageIO;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -19,6 +24,9 @@ public abstract class BaseMenu extends JPanel {
 	private static final long serialVersionUID = -298918690071573431L;
 	protected JOptionPane dlgConfirmExitGame;
 	protected JOptionPane dlgShowError;
+	public Media media;
+	public JFXPanel fxpnanel;
+	public static MediaPlayer mediaPlayer;
 
 	public void backToMainMenu() {
 		Window.LayoutManager.show(getParent(), Menus.MAIN.toString());
@@ -95,4 +103,34 @@ public abstract class BaseMenu extends JPanel {
 			return false;
 		}
 	}
+	
+	public void playMainMenuSound() 
+	{
+		String musicpath = "resources/maintheme.mp3";
+		fxpnanel = new JFXPanel();
+	    media = new Media(new File(musicpath).toURI().toString());
+	    mediaPlayer = new MediaPlayer(media);
+	    mediaPlayer.play();
+	}
+	
+	public void playGameSound() 
+	{
+		String musicpath = "resources/gamemusic.mp3";
+		fxpnanel = new JFXPanel();
+	    media = new Media(new File(musicpath).toURI().toString());
+	    mediaPlayer = new MediaPlayer(media);
+	    mediaPlayer.play();
+	}
+	
+	public static void stopSound() 
+	{
+	  try
+	  {
+		  mediaPlayer.stop();
+	  }
+	  catch (Exception e)
+	  {
+	    e.printStackTrace();
+	  }
+	}	
 }
